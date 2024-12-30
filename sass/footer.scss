@@ -1,0 +1,55 @@
+#footer {
+  background-color: $primary-bg-color;
+  border-top: 4px solid $primary-blue-color;
+  padding: 48px 0;
+
+  .card-title {
+    margin-bottom: 12px !important;
+  }
+  p {
+    color: $gray;
+  }
+
+  .useful-links {
+    text-align: left;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+
+      a {
+        text-decoration: none;
+        color: $gray;
+        transition: 0.2s ease;
+
+      } a:hover {
+        color: $text-color;
+      }
+    }
+  }
+
+  .social-medias {
+    i {
+      font-size: 32px;
+      color: $text-color;
+      transition: 0.2s ease;
+
+    } i:hover {
+      color: $primary-blue-color;
+    }
+
+    .trace {
+      width: 100%;
+      height: 2px;
+      background-color: $text-color;
+      border-radius: 4px;
+    }
+  }
+
+  .division { 
+    width: 2px;
+    height: 100%;
+    background-color: $text-color;
+    border-radius: 4px;
+  }
+}

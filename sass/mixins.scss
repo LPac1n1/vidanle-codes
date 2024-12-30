@@ -1,0 +1,11 @@
+// Text formatting
+@mixin text-formatting($font-family, $font-size, $font-weight, $line-height) {
+  font-family: $font-family, 'Segoe UI', 'Arial', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+h1 {
+  @include text-formatting('Inter', 24px, bold, auto)
+}

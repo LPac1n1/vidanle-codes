@@ -1,0 +1,41 @@
+#code-download {
+  .reference-img {
+    position: relative;
+    border: 2px solid $primary-blue-color;
+    border-radius: 50%;
+    padding: 4px;
+
+    img {
+      border-radius: 50%;
+    }
+
+    a {
+      opacity: 0;
+      text-decoration: none;
+      color: white;
+      position: absolute;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      div {
+        width: 12rem;
+        height: 12rem;
+        background-color: rgba(0, 0, 0, 50%);
+        border-radius: 50%;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        .section-text {
+          font-size: 1.25rem;
+          text-align: center;
+          opacity: 100%;
+          margin: 0;
+        }
+      }
+    } a:hover {
+      opacity: 100;
+    }
+  }
+}

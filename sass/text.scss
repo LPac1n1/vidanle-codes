@@ -1,0 +1,25 @@
+@import './colors.scss';
+
+// Page Titles Style
+.page-title {
+  @include text-formatting('Miriam Libre', 5rem, bold, auto);
+}
+.page-subtitle {
+  @include text-formatting('Inter', 2.5rem, regular, 56px);
+}
+
+// Sections Text Styles
+.section-subtitle {
+  @include text-formatting('Miriam Libre', 1rem, bold, auto);
+  color: $primary-blue-color;
+  margin-bottom: 8px;
+}
+.section-title {
+  @include text-formatting('Miriam Libre', 2.75rem, bold, auto);
+  margin-bottom: 12px;
+}
+
+.section-text {
+  @include text-formatting('Inter', 1rem, 400, 28px);
+  margin-bottom: 24px;
+}

@@ -1,0 +1,155 @@
+#tutorials {
+  position: relative;
+
+  #description-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    opacity: 1;
+    transition: opacity .1s ease;
+    background: linear-gradient(180deg, #151924 25%, #181C28 50%, #12151F 100%);
+  }
+  #hash-bg {
+    @extend #description-bg;
+    background: linear-gradient(180deg, #241515 25%, #281818 50%, #1F1212 100%);
+    opacity: 0;
+  }
+  #stopwatch-bg {
+    @extend #description-bg;
+    background: linear-gradient(180deg, #201524 25%, #201524 50%, #201524 100%);
+    opacity: 0;
+  }
+  #snake-bg {
+    @extend #description-bg;
+    background: linear-gradient(180deg, #241c15 25%, #282118 50%, #1f1912 100%);
+    opacity: 0;
+  }
+  #calculator-bg {
+    @extend #description-bg;
+    background: linear-gradient(180deg, #15241b 25%, #18281e 50%, #121f18 100%);
+    opacity: 0;
+  }
+
+  .sideline {
+    div:first-child{
+      border-radius: 0 0 12px 12px;
+    }
+    div:last-child {
+      border-radius: 12px 12px 0 0;
+    }
+
+    button {
+      background-color: $primary-blue-color;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+
+      i {
+        font-size: 18px;
+      }
+    }
+
+    .line {
+      width: 4px;
+      height: 56px;
+      background-color: $primary-blue-color;
+      border-radius: 4px;
+    }
+  }
+
+  .language-bar {
+    background-color: $language-bar-bg-color;
+    border-radius: 8px 8px 0 0;
+    padding: 12px 28px;
+
+    button {
+      font-size: 0.75rem;
+      background: none;
+      border: none;
+      padding: 5px 12px;
+    }
+
+    .seeing {
+      background-color: $language-bg-color;
+      border-radius: 8px;
+      padding: 5px 12px;
+    }
+  }
+
+  .code-wrapper {
+    position: relative;
+
+    pre {
+      width: 100%;
+      height: 100%;
+      margin: 0 0 24px;
+      border-radius: 0 0 8px 8px;
+  
+      code {
+        height: 236px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+      }
+    }
+  }
+
+  .btn {
+    i {
+      padding: 0;
+    }
+  }
+  .hash-btn {
+    background-color: #ff2525;
+    border-color: #ff2525;
+  } .hash-btn:hover {
+    background-color: #db1e1e;
+    border-color: #db1e1e;
+  }
+  .stopwatch-btn {
+    background-color: #9f34b9;
+    border-color: #9f34b9;
+  } .stopwatch-btn:hover {
+    background-color: #79288d;
+    border-color: #79288d;
+  }
+  .snake-btn {
+    background-color: #ff7d21;
+    border-color: #ff7d21;
+  } .snake-btn:hover {
+    background-color: #c9631a;
+    border-color: #c9631a;
+  }
+  .calculator-btn {
+    background-color: #36ff6b;
+    border-color: #36ff6b;
+  } .calculator-btn:hover {
+    background-color: #26b64d;
+    border-color: #26b64d;
+  }
+
+  .tutorial-img {
+    position: relative;
+
+    > img {
+      position: absolute;
+      transform: translateX(-225px) translateY(-320px);
+    }
+
+    .card {
+      border-radius: 24px;
+    }
+    .tutorial-card {
+      position: absolute !important;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 90px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

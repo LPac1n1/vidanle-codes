@@ -1,0 +1,43 @@
+.card {
+  .tags {
+    margin-bottom: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    @include text-formatting('Inter', 0.875rem, 500, auto);
+    border-radius: 4px;
+    padding: 4px 12px;
+  
+  } .game-tag {
+    background-color: $red;
+  }  .app-tag {
+    background-color: $purple;
+  } .board-game-tag {
+    background-color: $green;
+  } .cards-game-tag {
+    background-color: $pink;
+  }
+  
+  .html-tag {
+    background-color: $orange;
+  } .css-tag {
+    background-color: $tertiary-blue-color;
+  } .js-tag {
+    background-color: $yellow;
+  }
+  
+  
+  i {
+    font-size: 6rem;
+    color: #0033CE;
+  }
+  
+  
+  .coming-soon-track {
+    width: 100%;
+    background-color: $primary-blue-color;
+    padding: 8px 0;
+  }
+}

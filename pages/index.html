@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vidanle Codes | Página Inicial</title>
+
+  <!-- CSS Bootstrap Links -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- highlight.js Link -->
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css"/>
+  
+    <!-- CSS Links -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-bs-theme="dark" id="body">
+  <div class="page">
+    <section id="register-section" class="hide">
+      <div class="register-content">
+        <div class="all" style="position: relative;">
+          <div class="cadastro" id="cadastro">
+            <div>
+              <div class="titulo">
+                <h1>Cadastre-se</h1>  
+              </div>
+  
+              <div class="text">
+                <label for="Email">Email</label>
+                <input type="text" name="Email" placeholder="Informe seu email">
+              </div>
+  
+              <div class="text">
+                <label for="nome">Nome</label>
+                <input type="name" name="nome" placeholder="Informe seu nome">
+              </div>
+  
+              <div class="text senha">
+                <label for="senha">Senha</label>
+                <div class="coluna">
+                  <input type="password" name="senha" placeholder="Insira sua senha" id="senha">
+                  <input type="password" name="senha" placeholder="Confirme sua senha" id="conf">
+                </div>
+              </div>
+  
+              <div class="mostrar">
+                <input type="checkbox" name="mostra" id="check">
+                <label for="mostra">Mostrar senha</label>
+              </div>
+  
+              <div class="button_cont">
+                <input value="Fazer cadastro" type="button" id="make-register-btn">
+                <input class="tenho-conta" id="login" value="Já tenho uma conta" type="button">
+              </div>
+            </div>
+          </div>
+  
+          <div class="loginscene hide" id="loginscene">
+            <div>
+              <div class="titulo">
+                <h1>Login</h1>
+              </div>
+  
+              <div class="text">
+                <label for="Email">Email</label>
+                <input type="Email" name="Email" placeholder="Insira seu email">
+              </div>
+  
+  
+              <div class="text">
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha2" placeholder="Informe sua senha">
+              </div>
+  
+              <div class="mostrar">
+                <input type="checkbox" name="mostra" id="check2">
+                <label for="mostra">Mostrar senha</label>
+              </div>
+  
+              <div class="entrar">
+                <input value="Entrar" type="button" id="make-login-btn">
+                <input type="button" class="entrar" value="Não tenho uma conta" id="cad">
+              </div>
+            </div>
+          </div>
+  
+          <div style="position: absolute; left: 0; top: 0; padding: 24px;">
+            <button type="button" id="close-btn" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="font-size: 24px;"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-brand">
+            <i class="bi bi-code-slash" style="font-size: 2rem; color: #0033CE;"></i>
+          </div>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item  me-4">
+              <a class="nav-link active" aria-current="page" href="../pages/index.html">Página Inicial</a>
+            </li>
+            <li class="nav-item me-4">
+              <a class="nav-link" href="../pages/games_and_apps.html">Jogos e Aplicações</a>
+            </li>
+            <li class="nav-item dropdown me-4">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tutoriais
+                <i class="bi bi-chevron-compact-down" style="font-size: 12px; margin-left: 4px;"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../pages/hash_tutorial.html">Jogo da velha</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../pages/stopwatch_tutorial.html">Cronômetro</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../pages/snake_tutorial.html">Jogo Snake</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="../pages/calculator_tutorial.html">Calculadora</a></li>
+              </ul>
+            </li>
+            <li class="nav-item me-4">
+              <a class="nav-link" href="../pages/about_us.html">Sobre Nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/contact.html">Contato</a>
+            </li>
+          </ul>
+
+          <div class="d-flex gap-3">
+            <button class="btn btn-primary" id="login-btn">Fazer login</button>
+            <button class="btn btn-outline-primary" id="register-btn">Registrar-se</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <section id="page-title" style="position: relative;">
+      <div class="container-fluid" style="height: 80dvh; border-bottom: solid 4px #0033CE;" id="matrix-effect-size">
+        <div class="container d-flex flex-row" style="height: 100%;">
+          <div class="d-flex flex-column justify-content-center gap-4" style="width: 70%;">
+            <div class="d-flex flex-column gap-2">
+              <h1 class="display-1 page-title">Vidanle Codes |</h1>
+              <h2 class="display-6 page-subtitle">Transformando ideias <br> em código.</h2>
+            </div>
+            <div>
+              <a href="#vidanle-skills">
+                <button type="button" class="btn btn-outline-light btn-lg" style="border-radius: 2px;">
+                  Saiba mais
+                  <i class="bi bi-chevron-compact-down" style="font-size: 16px; margin-left: 4px;"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-center align-items-center">
+            <img src="../images/web-template.png" class="img-fluid" height="100%" alt="">
+          </div>
+        </div>
+      </div>
+  
+      <canvas 
+        id="canvas" 
+        style="position: absolute; bottom: 1px; z-index: -1; opacity: 50%;">
+      </canvas>
+    </section>
+  
+    <div id="content" style="position: relative; width: 100%; height: 100%;">
+      <div class="container">
+        <section id="vidanle-skills">
+          <div class="carousel-slider">
+            <div class="slider-item">
+              <div class="skill text-center">
+                <div class="skill-body">
+                  <h5 class="skill-title">Variedade de códigos</h5>
+                  <p class="skill-text">Aproveite uma ampla gama de códigos HTML, CSS e JavaScript.</p>
+                  <div class="skill-icon">
+                    <i class="bi bi-journal-code"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="slider-item">
+              <div class="skill text-center">
+                <div class="skill-body">
+                  <h5 class="skill-title">Explicações passo-a-passo</h5>
+                  <p class="skill-text">Desvende o desenvolvimento web com explicações passo a passo detalhadas.</p>
+                  <div class="skill-icon">
+                    <i class="bi bi-list-ol"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="slider-item">
+              <div class="skill text-center">
+                <div class="skill-body">
+                  <h5 class="skill-title">Conteúdos gratuitos</h5>
+                  <p class="skill-text">Explore nosso conteúdo detalhado e didático de maneira totalmente gratuita.</p>
+                  <div class="skill-icon">
+                    <i class="bi bi-folder-check"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="games-and-apps">
+          <div class="d-flex">
+            <div class="col-4">
+              <div class="follow" id="scroll-follower-div">
+                <div class="mb-4">
+                  <h3 class="section-subtitle">Veja nossos</h3>
+                  <h2 class="section-title mb-3">Jogos e Aplicações</h2>
+      
+                  <p class="section-text">Nosso site apresenta uma ampla variedade de códigos HTML, CSS e JavaScript, abrangendo desde conceitos fundamentais até técnicas avançadas. Explore esse diversificado conjunto de códigos para aprimorar suas habilidades de desenvolvimento web.</p>
+                </div>
+      
+                <a href="../pages/games_and_apps.html">
+                  <button type="button" class="btn btn-outline-primary">
+                    Ver todos os jogos e aplicações
+                    <i class="bi bi-arrow-right-short"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+      
+            <div class="col-8 d-flex flex-wrap justify-content-end align-items-center" style="column-gap: 1.60rem;">
+              <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <div class="tags d-flex gap-2">
+                    <span class="tag game-tag">Jogo</span>
+                    <span class="tag html-tag">HTML</span>
+                    <span class="tag css-tag">CSS</span>
+                    <span class="tag js-tag">JS</span>
+                  </div>
+                  <h5 class="card-title text-center">Jogo da Velha</h5>
+                  <div class="text-center">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                  </div>
+                  <p class="card-text">Desfrute de um clássico jogo da velha em JavaScript, um código simples e interativo que proporciona diversão para todos os níveis de habilidade de programação.</p>
+                  <div class="text-center mt-4">
+                    <a href="../games_and_apps/hash/index.html" target="_blank">
+                      <button type="button" class="btn btn-primary">Jogar</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <div class="tags d-flex gap-2">
+                    <span class="tag app-tag">App</span>
+                    <span class="tag html-tag">HTML</span>
+                    <span class="tag css-tag">CSS</span>
+                    <span class="tag js-tag">JS</span>
+                  </div>
+                  <h5 class="card-title text-center">Cronômetro</h5>
+                  <div class="text-center">
+                    <i class="bi bi-stopwatch"></i>
+                  </div>
+                  <p class="card-text">Experimente a precisão de um código de cronômetro em JavaScript.</p>
+                  <div class="text-center mt-4">
+                    <a href="../games_and_apps/stopwatch/index.html" target="_blank">
+                      <button type="button" class="btn btn-primary">Utilizar</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <div class="tags d-flex gap-2">
+                    <span class="tag game-tag">Jogo</span>
+                    <span class="tag html-tag">HTML</span>
+                    <span class="tag css-tag">CSS</span>
+                    <span class="tag js-tag">JS</span>
+                  </div>
+                  <h5 class="card-title text-center">Jogo Snake</h5>
+                  <div class="text-center">
+                    <i class="bi bi-joystick"></i>
+                  </div>
+                  <p class="card-text">Aproveite o divertido jogo Snake com nosso código em JavaScript.</p>
+                  <div class="text-center mt-4">
+                    <a href="../games_and_apps/snake/index.html" target="_blank">
+                      <button type="button" class="btn btn-primary">Jogar</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <div class="tags d-flex gap-2">
+                    <span class="tag app-tag">App</span>
+                    <span class="tag html-tag">HTML</span>
+                    <span class="tag css-tag">CSS</span>
+                    <span class="tag js-tag">JS</span>
+                  </div>
+                  <h5 class="card-title text-center">Calculadora</h5>
+                  <div class="text-center">
+                    <i class="bi bi-calculator"></i>
+                  </div>
+                  <p class="card-text">Explore a funcionalidade de uma calculadora. Nosso código permite que você realize cálculos matemáticos de maneira simples e eficaz.</p>
+                  <div class="text-center mt-4">
+                    <a href="../games_and_apps/calculator/index.html" target="_blank">
+                      <button type="button" class="btn btn-primary">Utilizar</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="developers">
+          <div class="text-center">
+            <h3 class="section-subtitle" style="margin-bottom: 16px;">Saiba mais sobre</h3>
+            <h2 class="section-title" style="margin-bottom: 96px;">Nosso time de Desenvolvedores</h2>
+          </div>
+      
+          <div class="d-flex justify-content-between flex-wrap">
+            <div class="card" style="width: 19rem;">
+              <div class="developer-bg">
+                <img src="../images/developer1.png" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <div class="mb-4">
+                  <h5 class="card-title">David Neves</h5>
+                  <h4 class="card-subtitle">Desenvolvedor Web Júnior</h4>
+                </div>
+                <p class="card-text">Curioso e sistemático, sempre quer saber como cada coisa funciona e imprementá-la.</p>
+                <div class="developer-socials d-flex justify-content-center align-items-center gap-4 mt-4">
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width: 19rem;">
+              <div class="developer-bg">
+                <img src="../images/developer2.png" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <div class="mb-4">
+                  <h5 class="card-title">Ryan Carlos</h5>
+                  <h4 class="card-subtitle">Desenvolvedor Web Júnior</h4>
+                </div>
+                <p class="card-text">Atento e prático, quer fazer as coisas da melhor maneira sempre que possível.</p>
+                <div class="developer-socials d-flex justify-content-center align-items-center gap-4 mt-4">
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width: 19rem;">
+              <div class="developer-bg">
+                <img src="../images/developer3.png" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <div class="mb-4">
+                  <h5 class="card-title">Leandro Marinho</h5>
+                  <h4 class="card-subtitle">Desenvolvedor Web Júnior</h4>
+                </div>
+                <p class="card-text">Rápido e organizado, faz o que tem que ser feito para solucionar um problema.</p>
+                <div class="developer-socials d-flex justify-content-center align-items-center gap-4 mt-4">
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width: 19rem;">
+              <div class="developer-bg">
+                <img src="../images/developer4.png" class="card-img-top" alt="...">
+              </div>
+              <div class="card-body">
+                <div class="mb-4">
+                  <h5 class="card-title">Leonardo Pacini</h5>
+                  <h4 class="card-subtitle">Desenvolvedor Web Júnior</h4>
+                </div>
+                <p class="card-text">Apaixonado por programação, busca sempre aprimorar seu conhecimento.</p>
+                <div class="developer-socials d-flex justify-content-center align-items-center gap-4 mt-4">
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href=""><i class="bi bi-github"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="tutorials" style="position: relative;">
+        <div id="description-bg" data-tutorials-bg></div>
+        <div id="hash-bg" data-tutorials-bg></div>
+        <div id="stopwatch-bg" data-tutorials-bg></div>
+        <div id="snake-bg" data-tutorials-bg></div>
+        <div id="calculator-bg" data-tutorials-bg></div>
+      
+        <div class="container d-flex">
+          <div class="sideline col-2 d-flex flex-column justify-content-center align-items-center gap-3">
+            <div class="line"></div>
+            <button id="tutorials-section-btn" class=""><i class="bi bi-text-paragraph"></i></button>
+            <div class="line"></div>
+            <button id="tutorials-section-btn" class="unclicked"><i class="bi bi-grid-3x3-gap"></i></button>
+            <div class="line"></div>
+            <button id="tutorials-section-btn" class="unclicked"><i class="bi bi-stopwatch"></i></button>
+            <div class="line"></div>
+            <button id="tutorials-section-btn" class="unclicked"><i class="bi bi-joystick"></i></button>
+            <div class="line"></div>
+            <button id="tutorials-section-btn" class="unclicked"><i class="bi bi-calculator"></i></button>
+            <div class="line"></div>
+          </div>
+          <canvas 
+            id="tutorials-bg-lights"
+            style="position: absolute; left: 0; top: 0; z-index: -1;"
+            >
+          </canvas>
+          
+          <div id="description" class="" data-tutorials-section>
+            <div class="d-flex h-100">
+              <div class="col-5 mt-5 mb-5">
+                <h3 class="section-subtitle" id="tutorial-subtitle">Siga nossos</h3>
+                <h2 class="section-title">Tutoriais</h2>
+                <p class="section-text">Nossa seção de tutoriais é o coração do nosso site, projetada para guiar os visitantes em uma jornada educacional envolvente e abrangente no mundo do desenvolvimento web. </p>
+              </div>
+      
+              <div class="tutorial-img col-7">
+                <img src="../images/binary-coding.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div id="hash" class="hide" data-tutorials-section>
+            <div class="d-flex h-100">
+              <div class="col-5 mt-5 mb-5">
+                <h3 class="section-subtitle" id="tutorial-subtitle">Tutorial de como fazer</h3>
+                <h2 class="section-title">Jogo da Velha</h2>
+                <p class="section-text">Nosso tutorial irá guiá-lo através da criação deste jogo clássico passo a passo. Você aprenderá a construir a interface, implementar a lógica do jogo e proporcionar uma experiência interativa para os jogadores.</p>
+                <div class="language-bar d-flex align-items-center gap-4 w-100">
+                  <button class="seeing" id="html-btn">HTML</button>
+                  <button id="css-btn">CSS</button>
+                  <button id="js-btn">JS</button>
+                </div>
+                <div class="code-wrapper">
+                  <pre id="html"><code class="language-html">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;pt-br&quot;&gt;
+      &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot; /&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot; /&gt;
+      &lt;title&gt;Jogo da Velha&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      &lt;div class=&quot;container flex&quot;&gt;
+      &lt;div class=&quot;players-name&quot;&gt;
+        &lt;p&gt;Insira o nome dos jogadores:&lt;/p&gt;
+        &lt;div class=&quot;box-names flex&quot; id=&quot;form&quot;&gt;
+          &lt;div&gt;
+            &lt;label for=&quot;first-player&quot;&gt;1º Jogador:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; placeholder=&#39;Será o &quot;X&quot;&#39; name=&quot;first-player&quot; id=&quot;first-player&quot;&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label for=&quot;second-player&quot;&gt;2º Jogador:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; placeholder=&#39;Será o &quot;O&quot;&#39; name=&quot;second-player&quot; id=&quot;second-player&quot;&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;input type=&quot;submit&quot; class=&quot;submit-names&quot; value=&quot;Começar&quot;&gt;&lt;/input&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;game hide&quot;&gt;
+        &lt;div class=&quot;score-box&quot;&gt;
+          &lt;div class=&quot;flex&quot;&gt;
+            &lt;p class=&quot;player-name&quot; id=&quot;first-player-name&quot;&gt;&lt;/p&gt;
+            &lt;span class=&quot;score-number&quot; id=&quot;first-player-score&quot;&gt;0&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;span&gt;VS&lt;/span&gt;
+      
+          &lt;div class=&quot;flex&quot;&gt;
+            &lt;p class=&quot;player-name&quot; id=&quot;second-player-name&quot;&gt;&lt;/p&gt;
+            &lt;span class=&quot;score-number&quot; id=&quot;second-player-score&quot;&gt;0&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;board&quot; data-board&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+          &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;winning-message&quot; data-winning-message&gt;
+          &lt;p class=&quot;winning-message-text&quot; data-winning-message-text&gt;X Venceu!&lt;/p&gt;
+          &lt;button class=&quot;winning-message-button&quot; data-restart-button&gt;
+            Reiniciar!
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;script src=&quot;./scripts.js&quot;&gt;&lt;/script&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+                    </code></pre>
+      
+                  <pre id="css" class="hide"><code class="language-css">
+      * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      
+      body {
+      height: 100vh;
+      width: 100vw;
+      background: linear-gradient(
+      90deg,
+      rgba(19, 21, 21) 0%,
+      rgba(11, 33, 99) 100%
+      );
+      }
+      .container {
+      width: 100vw;
+      height: 100vh;
+      }
+      
+      .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      
+      .players-name {
+      background-color: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin: 24px;
+      }
+      .players-name p {
+      text-align: center;
+      font-weight: 500;
+      font-size: 24px;
+      margin-bottom: 24px;
+      }
+      
+      .box-names {
+      flex-direction: column;
+      gap: 24px;
+      }
+      .box-names div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      }
+      input {
+      width: 100%;
+      border: solid 1px;
+      border-radius: 16px;
+      padding: 8px 24px 8px 12px;
+      }
+      label {
+      text-align: center;
+      width: 148px;
+      padding: 12px;
+      }
+      
+      .submit-names {
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      background-color: #0b2163;
+      padding: 8px 24px;
+      transition: all 0.3s ease-in-out;
+      
+      } .submit-names:hover {
+      background-color: #001140;
+      }
+      
+      .score-box {
+      position: absolute;
+      width: 356px;
+      background-color: white;
+      border: solid 2px #0b2163;
+      border-radius: 8px;
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      left: -1px;
+      top: -1px;
+      
+      padding: 12px;
+      margin: 48px;
+      }
+      .score-box div {
+      width: 124px;
+      text-align: center;
+      flex-direction: column;
+      }
+      .score-box > span {
+      font-size: 24px;
+      font-weight: 500;
+      }
+      .player-name {
+      font-size: 20px;
+      font-weight: 400;
+      }
+      .score-number {
+      font-size: 56px;
+      font-weight: 700;
+      }
+      
+      .board {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(3, auto);
+      }
+      
+      .board.x .cell:not(.x):not(.circle):hover::after,
+      .board.x .cell:not(.x):not(.circle):hover::before {
+      background: rgba(255, 255, 255, 0.3) !important;
+      }
+      
+      .board.circle .cell:not(.x):not(.circle):hover::after,
+      .board.x .cell:not(.x):not(.circle):hover::before {
+      border-color: rgba(255, 255, 255, 0.3) !important;
+      }
+      
+      /* Célula */
+      .cell {
+      width: 124px;
+      height: 124px;
+      border: 5px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      }
+      
+      .cell.x,
+      .cell.circle {
+      cursor: not-allowed;
+      }
+      
+      .cell:nth-child(1),
+      .cell:nth-child(2),
+      .cell:nth-child(3) {
+      border-top: none;
+      }
+      
+      .cell:nth-child(1),
+      .cell:nth-child(4),
+      .cell:nth-child(7) {
+      border-left: none;
+      }
+      
+      .cell:nth-child(7),
+      .cell:nth-child(8),
+      .cell:nth-child(9) {
+      border-bottom: none;
+      }
+      
+      .cell:nth-child(3),
+      .cell:nth-child(6),
+      .cell:nth-child(9) {
+      border-right: none;
+      }
+      
+      /* X */
+      .cell.x::before,
+      .cell.x::after,
+      .board.x .cell:not(.x):not(.circle):hover::after,
+      .board.x .cell:not(.x):not(.circle):hover::before {
+      content: "";
+      height: calc(80px * 0.15);
+      width: calc(80px * 0.9);
+      background: white;
+      position: absolute;
+      }
+      
+      .cell.x::before,
+      .board.x .cell:not(.x):not(.circle):hover::before {
+      transform: rotate(45deg);
+      }
+      
+      .cell.x::after,
+      .board.x .cell:not(.x):not(.circle):hover::after {
+      transform: rotate(-45deg);
+      }
+      
+      /* Circle */
+      .cell.circle::before,
+      .cell.circle::after,
+      .board.circle .cell:not(.x):not(.circle):hover::after {
+      content: "";
+      height: calc(80px * 0.9);
+      width: calc(80px * 0.9);
+      border: solid 12px white;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 50%;
+      }
+      
+      /* Mensagem de Vitória */
+      .winning-message {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      flex-direction: column;
+      }
+      
+      .winning-message-button {
+      font-size: 28px;
+      background-color: rgb(11, 33, 99);
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      margin-top: 24px;
+      color: white;
+      transition: all 0.2s ease-in-out;
+      }
+      
+      .winning-message-button:hover {
+      color: rgb(11, 33, 99);
+      background-color: white;
+      }
+      
+      .winning-message-text {
+      color: white;
+      font-size: 5rem;
+      font-weight: 500;
+      }
+      
+      .show-winning-message {
+      display: flex;
+      }
+      
+      .show-board {
+      display: grid;
+      }
+      
+      .hide {
+      display: none;
+      }
+                    </code></pre>
+
+                  <pre id="js" class="hide"><code class="language-js">
+      const startButton = document.querySelector(".submit-names")
+      const playersName = document.querySelector(".players-name")
+      const game = document.querySelector(".game") 
+      
+      startButton.onclick = () => {
+      playersName.classList.add("hide")
+      game.classList.remove("hide")
+      showNamesOnScore()
+      }
+      
+      const cellElements = document.querySelectorAll("[data-cell]");
+      const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
+      const board = document.querySelector("[data-board]")
+      const winningMessage = document.querySelector("[data-winning-message]");
+      const restartButton = document.querySelector("[data-restart-button]");
+      
+      let isCircleTurn;
+      
+      const winningCombinations = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+      ];
+      
+      const startGame = () => {
+      isCircleTurn = false;
+      for (const cell of cellElements) {
+          cell.classList.remove("circle");
+          cell.classList.remove("x");
+          cell.removeEventListener("click", handleClick);
+          cell.addEventListener("click", handleClick, { once: true });
+      }
+      setBoardHoverClass();
+      winningMessage.classList.remove("show-winning-message");
+      };
+      
+      let xScore = 0
+      let oScore = 0
+      
+      let firstPlayerName = document.getElementById("first-player")
+      let secondPlayerName = document.getElementById("second-player")
+      
+      const firstScoreName = document.getElementById("first-player-name")
+      const secondScoreName = document.getElementById("second-player-name")
+      
+      const showNamesOnScore = () => {
+      if (firstPlayerName.value == "") {
+          firstPlayerName.value = "Jogador 1"
+      }
+      if (secondPlayerName.value == "") {
+          secondPlayerName.value = "Jogador 2"
+      }
+      firstScoreName.innerHTML = firstPlayerName.value
+      secondScoreName.innerHTML = secondPlayerName.value
+      }
+      
+      const firstPlayerScoreText = document.getElementById("first-player-score")
+      const secondPlayerScoreText = document.getElementById("second-player-score")
+      
+      const showScore = () => {
+      firstPlayerScoreText.innerText = xScore
+      secondPlayerScoreText.innerText = oScore
+      }
+      
+      const endGame = (isDraw) => {
+      if (isDraw) {
+          winningMessageTextElement.innerText = "Empate!";
+      } else {
+          winningMessageTextElement.innerText = isCircleTurn
+          ? '"O" Venceu!'
+          : '"X" Venceu!';
+          isCircleTurn ? oScore = oScore + 1 : xScore = xScore + 1
+          showScore()
+      }
+      winningMessage.classList.add("show-winning-message");
+      };
+      
+      const checkForWin = (currentPlayer) => {
+      return winningCombinations.some((combination) => {
+          return combination.every((index) => {
+          return cellElements[index].classList.contains(currentPlayer);
+          });
+      });
+      };
+      
+      const checkForDraw = () => {
+      return [...cellElements].every((cell) => {
+          return cell.classList.contains("x") || cell.classList.contains("circle");
+      });
+      };
+      
+      const placeMark = (cell, classToAdd) => {
+      cell.classList.add(classToAdd);
+      };
+      
+      const setBoardHoverClass = () => {
+      board.classList.remove("circle");
+      board.classList.remove("x");
+      if (isCircleTurn) {
+          board.classList.add("circle");
+      } else {
+          board.classList.add("x");
+      }
+      };
+      
+      const swapTurns = () => {
+      isCircleTurn = !isCircleTurn;
+      setBoardHoverClass();
+      };
+      
+      const handleClick = (e) => {
+      const cell = e.target;
+      const classToAdd = isCircleTurn ? "circle" : "x";
+      placeMark(cell, classToAdd);
+      const isWin = checkForWin(classToAdd);
+      const isDraw = checkForDraw();
+      if (isWin) {
+          endGame(false);
+      } else if (isDraw) {
+          endGame(true);
+      } else {
+          swapTurns();
+      }
+      };
+      
+      startGame();
+      restartButton.addEventListener("click", startGame);
+                    </code></pre>
+                </div>
+                <a href="../pages/hash_tutorial.html">
+                  <button type="button" class="btn btn-primary hash-btn" style="color: white;">
+                    Fazer tutorial
+                  </button>
+                </a>
+              </div>
+      
+              <div class="tutorial-img col-7 d-flex justify-content-center">
+                <div class="card tutorial-card red-light" style="width: 33rem; height: 43rem;" data-tilt>
+                  <div class="card-body">
+                    <img src="../images/hash.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="stopwatch" class="hide" data-tutorials-section>
+            <div class="d-flex h-100">
+              <div class="col-5 mt-5 mb-5">
+                <h3 class="section-subtitle" id="tutorial-subtitle">Tutorial de como fazer</h3>
+                <h2 class="section-title">Cronômetro</h2>
+                <p class="section-text">Nosso tutorial irá conduzi-lo através de todos os passos necessários para implementar um cronômetro funcional. Você aprenderá a construir a interface e programar a lógica de contagem de tempo.</p>
+                <div class="language-bar d-flex align-items-center gap-4 w-100">
+                  <button class="seeing" id="html-btn">HTML</button>
+                  <button id="css-btn">CSS</button>
+                  <button id="js-btn">JS</button>
+                </div>
+                <div class="code-wrapper">
+                  <pre id="html"><code class="language-html">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;pt-br&quot;&gt;
+      &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; &gt;
+      &lt;title&gt;Cronômetro&lt;/title&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=css/styles.css&gt;
+      &lt;script src=&quot;js/scripts.js&quot; defer&gt;&lt;/script&gt;
+      &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+      &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+      &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      &lt;div class=&quot;container&quot;&gt;
+      &lt;h1&gt;Cronômetro&lt;/h1&gt;
+      &lt;div class=&quot;timer&quot;&gt;
+        &lt;div class=&quot;time&quot; id=&quot;minutes&quot;&gt;00&lt;/div&gt;
+        &lt;div class=&quot;separator&quot;&gt;:&lt;/div&gt;
+        &lt;div class=&quot;time&quot; id=&quot;seconds&quot;&gt;00&lt;/div&gt;
+        &lt;div class=&quot;separator&quot;&gt;:&lt;/div&gt;
+        &lt;div class=&quot;time&quot; id=&quot;milliseconds&quot;&gt;000&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;buttons&quot;&gt;
+        &lt;button class=&quot;btn&quot; id=&quot;startBtn&quot;&gt;Iniciar&lt;/button&gt;
+        &lt;button class=&quot;btn&quot; id=&quot;pauseBtn&quot;&gt;Pausar&lt;/button&gt;
+        &lt;button class=&quot;btn&quot; id=&quot;resumeBtn&quot;&gt;Continuar&lt;/button&gt;
+        &lt;button class=&quot;btn&quot; id=&quot;resetBtn&quot;&gt;Resetar&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+                    </code></pre>
+      
+                  <pre id="css" class="hide"><code class="language-css">
+      *{
+      margin: 0;
+      padding: 0;
+      font-family: "orbitron", sans-serif;
+      }
+      
+      body{
+      background: rgba(19,21,21);
+      background-repeat: no-repeat;
+      height: 100%;
+      }
+      
+      .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      
+      height: 100vh;
+      }
+      
+      .container h1{
+      color: #175cff;
+      }
+      
+      .timer{
+      display: flex;
+      font-size: 55px;
+      font-weight: bold;
+      color: #333;
+      }
+      
+      .time{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      color: #172953;
+      min-width: 90px;
+      }
+      
+      .separator{
+      padding: 0 10px;
+      color: #525763;
+      }
+      
+      #milliseconds{
+      font-size: 30px;
+      color: #525763;
+      }
+      
+      .buttons{
+      display: flex;
+      gap: 1rem;
+      }
+      
+      .btn{
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      transition: all 0.2s ease-in-out;
+      }
+      
+      .btn:hover{
+      transform: scale(1.1);
+      }
+      
+      #startBtn{
+      background-color: #1755ff;
+      color: #fff;
+      }
+      
+      #pauseBtn, #resumeBtn{
+      display: none;
+      }
+                    </code></pre>
+
+                  <pre id="js" class="hide"><code class="language-js">
+      const minutesEl = document.querySelector("#minutes");
+      const secondsEl = document.querySelector("#seconds");
+      const millisecondsEl = document.querySelector("#milliseconds");
+      const startBtn = document.querySelector("#startBtn");
+      const pauseBtn = document.querySelector("#pauseBtn");
+      const resumeBtn = document.querySelector("#resumeBtn");
+      const resetBtn = document.querySelector("#resetBtn");
+      
+      let interval;
+      let minutes = 0;
+      let seconds = 0;
+      let milliseconds = 0;
+      let isPaused = false;
+      
+      startBtn.addEventListener("click", startTimer)
+      pauseBtn.addEventListener ("click", pauseTimer) 
+      resumeBtn.addEventListener ("click", resumeTimer)
+      resetBtn.addEventListener ("click", resetTimer)
+      
+      console.log(resetBtn.onclick == null)
+      
+      function startTimer() {
+      interval = setInterval(() => {
+      if(!isPaused){
+        milliseconds += 10
+        if(milliseconds === 1000){
+          seconds++
+          milliseconds = 0
+        }
+        if(seconds == 60){
+          minutes++
+          seconds = 0
+        }
+        minutesEl.textContent = formatTime (minutes);
+        secondsEl.textContent = formatTime (seconds);
+        millisecondsEl.textContent = milliseconds;
+      }
+      
+      }, 10)
+      
+      startBtn.style.display = "none"
+      pauseBtn.style.display = "block"
+      }
+      
+      function pauseTimer() {
+      isPaused = true
+      pauseBtn.style.display = "none"
+      resumeBtn.style.display = "block"
+      }
+      
+      function resumeTimer() {
+      isPaused = false
+      pauseBtn.style.display = "block"
+      resumeBtn.style.display = "none"
+      }
+      
+      function formatTime(time) {
+      return time < 10 ? `0${time}` : time;
+      }
+      
+      function resetTimer() {
+      clearInterval(interval)
+      minutes = 0
+      seconds = 0
+      milliseconds = 0
+      
+      minutesEl.textContent = "00"
+      secondsEl.textContent = "00"
+      millisecondsEl.textContent = "000"
+      
+      startBtn.style.display = "block"
+      pauseBtn.style.display = "none"
+      resumeBtn.style.display = "none"
+      }
+      resetBtn.addEventListener("click", () => {
+      isPaused = false
+      })
+      
+      function formatMilliseconds(time){
+      return time < 100 ? `${time}`.padStart(3, "0") : time;
+      }
+                    </code></pre>
+                </div>
+                <a href="../pages/stopwatch_tutorial.html">
+                  <button type="button" class="btn btn-primary stopwatch-btn" style="color: white;">
+                    Fazer tutorial
+                  </button>
+                </a>
+              </div>
+      
+              <div class="tutorial-img col-7 d-flex justify-content-center">
+                <div class="card tutorial-card purple-light" style="width: 33rem; height: 43rem;" data-tilt>
+                  <div class="card-body">
+                    <img src="../images/stopwatch.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="snake" class="hide" data-tutorials-section>
+            <div class="d-flex h-100">
+              <div class="col-5 mt-5 mb-5">
+                <h3 class="section-subtitle" id="tutorial-subtitle">Tutorial de como fazer</h3>
+                <h2 class="section-title">Jogo Snake</h2>
+                <p class="section-text">Nosso tutorial irá guiá-lo através da criação deste jogo clássico passo a passo. Você aprenderá a construir a interface, implementar a lógica do jogo e proporcionar uma experiência interativa para os jogadores.</p>
+                <div class="language-bar d-flex align-items-center gap-4 w-100">
+                  <button class="seeing" id="html-btn">HTML</button>
+                  <button id="css-btn">CSS</button>
+                  <button id="js-btn">JS</button>
+                </div>
+                <div class="code-wrapper">
+                  <pre id="html"><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;pt-br&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        
+        &lt;link 
+        rel=&quot;stylesheet&quot; 
+        href=&quot;https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&quot; 
+        /&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;./css/style.css&quot;&gt;
+        
+        &lt;title&gt;Snake Game&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;score&quot;&gt;score: &lt;span class=&quot;score--value&quot;&gt;00&lt;/span&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;menu-screen&quot;&gt;
+            &lt;span class=&quot;game-over&quot;&gt;game over&lt;/span&gt;
+            &lt;span class=&quot;final-score&quot;&gt;score &lt;span&gt;00&lt;/span&gt;&lt;/span&gt;
+
+            &lt;button class=&quot;btn-play&quot;&gt;
+                &lt;span class=&quot;material-symbols-outlined&quot;&gt;
+                    play_circle
+                &lt;/span&gt;
+                
+                Jogar novamente
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;canvas width=&quot;600&quot; height=&quot;600&quot;&gt;&lt;/canvas&gt;
+        &lt;script src=&quot;./js/script.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                    </code></pre>
+  
+                  <pre id="css" class="hide"><code class="language-css">
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppings", sans-serif;
+    }
+    
+    body {
+        background-color: #191919;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+    }
+    
+    canvas {
+        background-color: #111;
+    }
+    
+    .score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.8rem;
+    }
+    
+    .score--value {
+        font-weight: 700;
+        font-size: 4.5rem;
+        display: block;
+        margin-top: -10px;
+    }
+    
+    .menu-screen {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+    }
+    
+    .game-over {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 3rem;
+    }
+    
+    .final-score {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+    
+    .btn-play {
+        border: none;
+        border-radius: 100px;
+        padding: 10px 15px 10px 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #333;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        cursor: pointer;
+    }                    
+                    </code></pre>
+  
+                  <pre id="js" class="hide"><code class="language-js">
+    const canvas = document.querySelector("canvas")
+    const ctx = canvas.getContext("2d")
+
+    const score = document.querySelector(".score--value")
+    const finalScore = document.querySelector(".final-score > span")
+    const menu = document.querySelector(".menu-screen")
+    const buttonPlay = document.querySelector(".btn-play")
+
+    const audio = new Audio("../assets/audio.mp3")
+
+    const size = 30
+
+    const initialPosition = { x: 270, y: 240 }
+
+    let snake = [initialPosition]
+
+    const incrementScore = () => {
+        score.innerText = +score.innerText + 10
+    }
+
+    const randomNumber = (min, max) => {
+        return Math.round(Math.random() * (max - min) + min)
+    }
+
+    const randomPosition = () => {
+        const number = randomNumber(0, canvas.width - size)
+        return Math.round(number / 30) * 30
+    }
+
+    const randomColor = () => {
+        const red = randomNumber(0, 255)
+        const green = randomNumber(0, 255)
+        const blue = randomNumber(0, 255)
+
+        return `rgb(${red}, ${green}, ${blue})`
+    }
+
+    const food = {
+        x: randomPosition(),
+        y: randomPosition(),
+        color: randomColor()
+    }
+
+    let direction, loopId
+
+    const drawFood = () => {
+        const { x, y, color } = food
+
+        ctx.shadowColor = color
+        ctx.shadowBlur = 6
+        ctx.fillStyle = color
+        ctx.fillRect(x, y, size, size)
+        ctx.shadowBlur = 0
+    }
+
+    const drawSnake = () => {
+        ctx.fillStyle = "#ddd"
+
+        snake.forEach((position, index) => {
+            if (index == snake.length - 1) {
+                ctx.fillStyle = "white"
+            }
+
+            ctx.fillRect(position.x, position.y, size, size)
+        })
+    }
+
+    const moveSnake = () => {
+        if (!direction) return
+
+        const head = snake[snake.length - 1]
+
+        if (direction == "right") {
+            snake.push({ x: head.x + size, y: head.y })
+        }
+
+        if (direction == "left") {
+            snake.push({ x: head.x - size, y: head.y })
+        }
+
+        if (direction == "down") {
+            snake.push({ x: head.x, y: head.y + size })
+        }
+
+        if (direction == "up") {
+            snake.push({ x: head.x, y: head.y - size })
+        }
+
+        snake.shift()
+    }
+
+    const drawGrid = () => {
+        ctx.lineWidth = 1
+        ctx.strokeStyle = "#191919"
+
+        for (let i = 30; i < canvas.width; i += 30) {
+            ctx.beginPath()
+            ctx.lineTo(i, 0)
+            ctx.lineTo(i, 600)
+            ctx.stroke()
+
+            ctx.beginPath()
+            ctx.lineTo(0, i)
+            ctx.lineTo(600, i)
+            ctx.stroke()
+        }
+    }
+
+    const chackEat = () => {
+        const head = snake[snake.length - 1]
+
+        if (head.x == food.x && head.y == food.y) {
+            incrementScore()
+            snake.push(head)
+            audio.play()
+
+            let x = randomPosition()
+            let y = randomPosition()
+
+            while (snake.find((position) => position.x == x && position.y == y)) {
+                x = randomPosition()
+                y = randomPosition()
+            }
+
+            food.x = x
+            food.y = y
+            food.color = randomColor()
+        }
+    }
+
+    const checkCollision = () => {
+        const head = snake[snake.length - 1]
+        const canvasLimit = canvas.width - size
+        const neckIndex = snake.length - 2
+
+        const wallCollision =
+            head.x < 0 || head.x > canvasLimit || head.y < 0 || head.y > canvasLimit
+
+        const selfCollision = snake.find((position, index) => {
+            return index < neckIndex && position.x == head.x && position.y == head.y
+        })
+
+        if (wallCollision || selfCollision) {
+            gameOver()
+        }
+    }
+
+    const gameOver = () => {
+        direction = undefined
+
+        menu.style.display = "flex"
+        finalScore.innerText = score.innerText
+        canvas.style.filter = "blur(2px)"
+    }
+
+    const gameLoop = () => {
+        clearInterval(loopId)
+
+        ctx.clearRect(0, 0, 600, 600)
+        drawGrid()
+        drawFood()
+        moveSnake()
+        drawSnake()
+        chackEat()
+        checkCollision()
+
+        loopId = setTimeout(() => {
+            gameLoop()
+        }, 300)
+    }
+
+    gameLoop()
+
+    document.addEventListener("keydown", ({ key }) => {
+        if (key == "ArrowRight" && direction != "left") {
+            direction = "right"
+        }
+
+        if (key == "ArrowLeft" && direction != "right") {
+            direction = "left"
+        }
+
+        if (key == "ArrowDown" && direction != "up") {
+            direction = "down"
+        }
+
+        if (key == "ArrowUp" && direction != "down") {
+            direction = "up"
+        }
+    })
+
+    buttonPlay.addEventListener("click", () => {
+        score.innerText = "00"
+        menu.style.display = "none"
+        canvas.style.filter = "none"
+
+        snake = [initialPosition]
+    })
+                    </code></pre>
+                </div>
+                <a href="../pages/snake_tutorial.html">
+                  <button type="button" class="btn btn-primary snake-btn" style="color: white;">
+                    Fazer tutorial
+                  </button>
+                </a>
+              </div>
+      
+              <div class="tutorial-img col-7 d-flex justify-content-center">
+                <div class="card tutorial-card orange-light" style="width: 33rem; height: 43rem;" data-tilt>
+                  <div class="card-body">
+                    <img src="../images/snake.png" alt="Car com foto do jogo Snake">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="calculator" class="hide" data-tutorials-section>
+            <div class="d-flex h-100">
+              <div class="col-5 mt-5 mb-5">
+                <h3 class="section-subtitle" id="tutorial-subtitle">Tutorial de como fazer</h3>
+                <h2 class="section-title">Calculadora</h2>
+                <p class="section-text">Nosso tutorial irá guiá-lo através da criação deste jogo clássico passo a passo. Você aprenderá a construir a interface, implementar a lógica do jogo e proporcionar uma experiência interativa para os jogadores.</p>
+                <div class="language-bar d-flex align-items-center gap-4 w-100">
+                  <button class="seeing" id="html-btn">HTML</button>
+                  <button id="css-btn">CSS</button>
+                  <button id="js-btn">JS</button>
+                </div>
+                <div class="code-wrapper">
+                  <pre id="html"><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;pt-br&quot;&gt;
+      &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;title&gt;Calculadora&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;./style.css&quot;&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;div class=&quot;fundo&quot;&gt;
+          &lt;div class=&quot;calculadora&quot;&gt;
+            &lt;h1&gt;Calculadora&lt;/h1&gt;
+            &lt;p id=&quot;resultado&quot;&gt;&lt;/p&gt;
+            &lt;table&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;clean()&quot;&gt;C&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;back()&quot;&gt;&lt;&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;/&#39;)&quot;&gt;/&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;*&#39;)&quot;&gt;X&lt;/button&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;7&#39;)&quot;&gt;7&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;8&#39;)&quot;&gt;8&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;9&#39;)&quot;&gt;9&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;-&#39;)&quot;&gt;-&lt;/button&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;4&#39;)&quot;&gt;4&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;5&#39;)&quot;&gt;5&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;6&#39;)&quot;&gt;6&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;+&#39;)&quot;&gt;+&lt;/button&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;1&#39;)&quot;&gt;1&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;2&#39;)&quot;&gt;2&lt;/button&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;3&#39;)&quot;&gt;3&lt;/button&gt;&lt;/td&gt;
+                &lt;td rowspan=&quot;2&quot;&gt;
+                  &lt;button class=&quot;botao&quot; style=&quot;height: 106px&quot; onclick=&quot;calcular()&quot;&gt;
+                    =
+                  &lt;/button&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td colspan=&quot;2&quot;&gt;
+                  &lt;button class=&quot;botao&quot; style=&quot;width: 106px&quot; onclick=&quot;insert(&#39;0&#39;)&quot;&gt;
+                    0
+                  &lt;/button&gt;
+                &lt;/td&gt;
+                &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert (&#39;.&#39;)&quot;&gt;.&lt;/button&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    
+        &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;                    
+                    </code></pre>
+      
+                  <pre id="css" class="hide"><code class="language-css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .fundo {
+      background-image: linear-gradient(
+        45deg,
+        black,
+        rgb(84, 20, 204),
+        black
+      );
+      height: 100vh;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+    .calculadora {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .botao {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      margin: 3px;
+      cursor: pointer;
+      background-color: rgb(31, 31, 31);
+      border: none;
+      color: white;
+    }
+    .botao:hover {
+      background-color: black;
+    }
+    #resultado {
+      background-color: white;
+      width: 207px;
+      height: 30px;
+      margin: 5px;
+      font-size: 25px;
+      padding: 5px;
+      color: black;
+      text-align: right;
+    }
+                    </code></pre>
+  
+                  <pre id="js" class="hide"><code class="language-js">
+    function insert(num) {
+      var numero = document.getElementById("resultado").innerHTML;
+      document.getElementById("resultado").innerHTML = numero + num;
+    }
+    function clean() {
+      document.getElementById("resultado").innerHTML = "";
+    }
+    function back() {
+      var resultado = document.getElementById("resultado").innerHTML;
+      document.getElementById("resultado").innerHTML = resultado.substring(
+        0,
+        resultado.length - 1
+      );
+    }
+    function calcular() {
+      var resultado = document.getElementById("resultado").innerHTML;
+      if (resultado) {
+        document.getElementById("resultado").innerHTML = eval(resultado);
+      } else {
+        document.getElementById("resultado").innerHTML = "Nada a calcular...";
+      }
+    }
+                    </code></pre>
+                </div>
+                <a href="../pages/calculator_tutorial.html">
+                  <button type="button" class="btn btn-success" style="color: white;">
+                    Fazer tutorial
+                  </button>
+                </a>
+              </div>
+      
+              <div class="tutorial-img col-7 d-flex justify-content-center">
+                <div class="card tutorial-card green-light" style="width: 33rem; height: 43rem;" data-tilt>
+                  <div class="card-body">
+                    <img src="../images/calculator.png" alt="Card com foto da calculadora">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <section id="references">
+          <div class="d-flex justify-content-center align-items-center gap-4">
+            <i class="bi bi-bag-check-fill" style="font-size: 3rem; color: #0033CE; margin-bottom: 12px;"></i>
+            <h3 class="section-title">Referências</h3>
+            <div class="d-flex gap-3"></div>
+      
+            <div class="d-flex justify-content-center align-items-center">
+              <p class="section-text">Aperfeiçoe seu desenvolvimento com as referências de alta qualidade que impulsionam nossos códigos. Explore fontes confiáveis para inspirar seus projetos web.</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-4 text-center">
+            <div class="card" style="width: 19rem;">
+              <a href="https://www.youtube.com/c/dicasparadevs" target="_blank">
+                <div class="card-body">
+                  <img src="../images/felipe_rocha.jpg" class="img-fluid" alt="">
+                  <div class="d-flex justify-content-center align-items-center gap-3">
+                    <h5 class="card-title">Felipe Rocha</h5>
+                    <p class="card-text">Dicas para Devs</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+  
+            <div class="card" style="width: 19rem;">
+              <a href="https://www.youtube.com/@MatheusBattisti" target="_blank">
+                <div class="card-body">
+                  <img src="../images/matheus_battisti.jpg" alt="">
+                  <div class="d-flex justify-content-center align-items-center gap-3">
+                    <h5 class="card-title">Matheus Battisti</h5>
+                    <p class="card-text">Hora de Codar</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+  
+            <div class="card" style="width: 19rem;">
+              <a href="https://www.youtube.com/c/ManualdoDev" target="_blank">
+                <div class="card-body">
+                  <img src="../images/rolwane_borges.png" alt="">
+                  <div class="d-flex justify-content-center align-items-center gap-3">
+                    <h5 class="card-title">Rolwane Borges</h5>
+                    <p class="card-text">Manual do Dev</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+  
+            <div class="card" style="width: 19rem;">
+              <a href="https://www.youtube.com/@GustavoNeitzke" target="_blank">
+                <div class="card-body">
+                  <img src="../images/gustavo_neitzke.jpg" alt="">
+                  <div class="d-flex justify-content-center align-items-center gap-3">
+                    <h5 class="card-title">Gustavo Neitzke</h5>
+                    <p class="card-text">Canal Neitzke</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+  
+      <canvas
+        id="content-bg-lights" 
+        style="position: absolute; left: 0; top: 0; z-index: -999;"
+        >
+      </canvas>
+    </div>
+    
+    <footer id="footer">
+      <div class="container">
+        <div class="d-flex row">
+          <div class="useful-links col-3">
+            <h5 class="card-title">Links úteis</h5>
+            <ul class="d-flex flex-column gap-3">
+              <a href="../pages/about_us.html"><li>Nossa história</li></a>
+              <a href="../pages/about_us.html"><li>Nossos objetivos</li></a>
+              <a href="../pages/about_us.html"><li>Como trabalhamos</li></a>
+              <a href="../pages/contact.html"><li>Contate-nos</li></a>
+            </ul>
+          </div>
+  
+          <div class="d-flex justify-content-center col-1">
+            <div class="division"></div>
+          </div>
+  
+          <div class="newsletter col-4">
+            <h5 class="card-title">Newsletter</h5>
+            <p class="section-text">Se inscreva na nossa newslatter para saber quando novos códigos forem adicionados, além de ficar atualizado sobre todas as novidades.</p>
+            
+            <form class="row g-3">
+              <div class="col-auto">
+                <label for="inputEmail" class="visually-hidden">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Coloque seu email">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-outline-primary">Inscrever-se</button>
+              </div>
+            </form>
+          </div>
+  
+          <div class="d-flex justify-content-center col-1">
+            <div class="division"></div>
+          </div>
+  
+          <div class="social-medias col-3">
+            <h5 class="card-title">Redes sociais</h5>
+            <p class="section-text">Nos siga nas nossas redes sociais e interaja conosco!</p>
+  
+            <div class="d-flex justify-content-between align-items-center gap-3">
+              <a href=""><i class="bi bi-youtube"></i></a>
+              <div class="trace"></div>
+              <a href=""><i class="bi bi-twitter"></i></a>
+              <div class="trace"></div>
+              <a href=""><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+
+  
+  <!-- Page Scripts -->
+  <script src="../scripts/register.js"></script>
+  <script src="../scripts/matrix_effect.js"></script>
+  <script src="../scripts/index/skills_slider.js"></script>
+  <script src="../scripts/cursor_light.js"></script>
+  <script src="../scripts/index/change_tutorials_section.js"></script>
+  <script src="../scripts/switch_language.js"></script>
+  <script type="text/javascript" src="../scripts/index/vanilla_tilt.js"></script>
+  <script src="../scripts/index/content_bg_lights.js"></script>
+
+  <!-- Hammer.js Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/micro-slider@1.0.9/dist/micro-slider.min.js"></script>
+
+  <!-- highlight.js Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Page Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

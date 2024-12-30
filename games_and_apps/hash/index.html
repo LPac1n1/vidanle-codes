@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Jogo da Velha</title>
+</head>
+<body>
+    <div class="container flex">
+        <div class="players-name">
+            <p>Insira o nome dos jogadores:</p>
+            <div class="box-names flex" id="form">
+                <div>
+                    <label for="first-player">1º Jogador:</label>
+                    <input type="text" placeholder='Será o "X"' name="first-player" id="first-player">
+                </div>
+
+                <div>
+                    <label for="second-player">2º Jogador:</label>
+                    <input type="text" placeholder='Será o "O"' name="second-player" id="second-player">
+                </div>
+
+                <div>
+                    <input type="submit" class="submit-names" value="Começar"></input>
+                </div>
+            </div>
+        </div>
+
+        <div class="game hide">
+            <div class="score-box">
+                <div class="flex">
+                    <p class="player-name" id="first-player-name"></p>
+                    <span class="score-number" id="first-player-score">0</span>
+                </div>
+
+                <span>VS</span>
+                
+                <div class="flex">
+                    <p class="player-name" id="second-player-name"></p>
+                    <span class="score-number" id="second-player-score">0</span>
+                </div>
+            </div>
+        
+            <div class="board" data-board>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+            </div>
+        
+            <div class="winning-message" data-winning-message>
+                <p class="winning-message-text" data-winning-message-text>X Venceu!</p>
+                <button class="winning-message-button" data-restart-button>
+                    Reiniciar!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.list-group {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+
+  .list-group-title {
+    text-align: center;
+    background: linear-gradient(180deg, #242626 0%, rgba(36, 38, 38, 0.50) 100%);
+  }
+  
+  .list-group-item {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+}

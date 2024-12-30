@@ -1,0 +1,92 @@
+
+// ### Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Miriam+Libre:wght@400;700&family=Source+Sans+3:wght@300;400;500;700&display=swap');
+
+// ### Sass Archives
+// # Universal
+@import './mixins.scss';
+@import './text.scss';
+@import './colors.scss';
+@import './register.scss';
+@import './cards.scss';
+@import './footer.scss';
+
+// # Home Page
+@import'./index/skills.scss';
+@import './index/games_and_apps.scss';
+@import './index/developers.scss';
+@import './index/tutorials.scss';
+@import './index/references.scss';
+
+// # Games and Applications Page
+@import './games_and_apps/search_bar.scss';
+@import './games_and_apps/filters.scss';
+
+// # Tutorial Pages
+@import './tutorials/tutorial.scss';
+@import './tutorials/reference.scss';
+
+// # About Us Page
+@import './about_us/about_us.scss';
+
+// # Contact Page
+@import './contact/contact.scss';
+
+
+
+// ### Universal CSS Styles
+
+// Scrollbar Style
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $primary-bg-color;
+}
+::-webkit-scrollbar-corner {
+  background: $primary-bg-color;
+}
+::-webkit-scrollbar-thumb {
+  background: $secondary-bg-color;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: mix($primary-bg-color, $secondary-bg-color, 50%);
+}
+
+// Page Fomartting
+:root {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0;
+}
+
+.hide {
+  display: none !important;
+}
+.unclicked {
+  background: none !important;
+}
+
+.follow {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}

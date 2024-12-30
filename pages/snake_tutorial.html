@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vidanle Codes | Jogo Snake</title>
+
+  <!-- CSS Bootstrap Links -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  
+    <!-- CSS Links -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-bs-theme="dark">
+  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item  me-4">
+            <a class="nav-link active" aria-current="page" href="../pages/index.html">Página Inicial</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="../pages/games_and_apps.html">Jogos e Aplicações</a>
+          </li>
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tutoriais
+              <i class="bi bi-chevron-compact-down" style="font-size: 12px; margin-left: 4px;"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../pages/hash_tutorial.html">Jogo da velha</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/stopwatch_tutorial.html">Cronômetro</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/snake_tutorial.html">Jogo Snake</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/calculator_tutorial.html">Calculadora</a></li>
+            </ul>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="../pages/about_us.html">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/contact.html">Contato</a>
+          </li>
+        </ul>
+        <div class="navbar-brand">
+          <i class="bi bi-code-slash" style="font-size: 2rem; color: #0033CE;"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="page-title" style="position: relative;">
+    <div class="container-fluid" style="height: 50dvh; border-bottom: solid 4px #0033CE;" id="matrix-effect-size">
+      <div class="container d-flex flex-row" style="height: 100%;">
+        <div class="d-flex flex-column justify-content-center gap-4" style="width: 70%;">
+          <div class="d-flex flex-column gap-2">
+            <h2 class="section-subtitle" style="font-size: 2rem; margin: 0;">Tutorial</h2>
+            <h1 class="display-1 page-title">Jogo Snake |</h1>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="../images/setting.png" height="100%" alt="">
+        </div>
+      </div>
+    </div>
+
+    <canvas 
+      id="canvas" 
+      style="position: absolute; bottom: 1px; z-index: -1; opacity: 50%;">
+    </canvas>
+  </section>
+
+  <div id="content" style="position: relative; width: 100%; height: 100%;">
+    <div class="container">
+      <div id="tutorial-content">
+        <section id="tutorial">
+          <div class="row mb-5">
+            <div class="col-12">
+              <div class="steps">
+                <div class="step" style="padding: 0;">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Este tutorial está em processo de criação! 🎨</h5>
+                  </div>
+
+                  <p class="section-text">
+                    Nossa equipe está trabalhando arduamente para fornecer um guia abrangente e fácil de seguir, que permitirá que os entusiastas de programação e jogos aprendam a criar sua própria versão do clássico jogo Snake.
+                  </p>
+                  <p class="section-text">
+                    Estamos empolgados com a oportunidade de compartilhar esse tutorial com vocês e estamos comprometidos em garantir que o conteúdo seja informativo, educativo e divertido. Estamos dedicando tempo e esforço para garantir que o tutorial atenda às expectativas de todos os interessados em aprender a programar jogos.
+                  </p>
+                  <p class="section-text">
+                    Pedimos um pouco mais de paciência, pois estamos trabalhando para entregar um tutorial de alta qualidade. Em breve, estaremos lançando o tutorial completo, e mal podemos esperar para compartilhar isso com vocês.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="code-download">
+          <div class="d-flex justify-content-between gap-4">
+            <div class="card p-4">
+              <div class="d-flex align-items-center gap-4 mb-3">
+                <i class="bi bi-download" style="font-size: 48px;"></i>
+                <h5 class="section-title" style="margin: 0;">Baixar códigos</h5>
+              </div>
+
+              <div>
+                <p class="section-text">
+                  Em nosso site, você pode acessar e baixar gratuitamente os códigos do jogo da velha. Esses códigos são uma valiosa ferramenta de aprendizado para aspirantes a desenvolvedores e entusiastas de programação. Eles incluem um jogo de velha funcional programado em linguagens como HTML, CSS e JavaScript, e servem como ponto de partida para projetos personalizados.
+                </p>
+              </div>
+
+              <div>
+                <a href="../games_and_apps/Calculadora.zip" download>
+                  <button class="btn btn-outline-primary">Baixar códigos</button>
+                </a>
+              </div>
+            </div>
+
+            <div class="card w-100 d-flex flex-column align-items-center p-4">
+              <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
+                <i class="bi bi-bag-check-fill" style="font-size: 3rem;"></i>
+                <h5 class="section-title" style="margin: 0;">Referência</h5>
+              </div>
+
+              <div class="reference-img d-flex justify-content-center align-items-center mb-4">
+                <img src="../images/rolwane_borges.png" alt="Foto Felipe Rocha"
+                style="width: 12rem;">
+
+                <a href="https://www.youtube.com/c/ManualdoDev" target="_blank">
+                  <div>
+                    <p class="section-text">Ver <br> Canal</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="d-flex justify-content-center align-items-center gap-3" style="width: 12rem;">
+                <h5 class="card-title" style="text-align: right; line-height: 36px; width: 124px;">Rolwane Borges</h5>
+                <p class="card-text">Manual do Dev</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  <footer id="footer">
+    <div class="container">
+      <div class="d-flex row">
+        <div class="useful-links col-3">
+          <h5 class="card-title">Links úteis</h5>
+          <ul class="d-flex flex-column gap-3">
+            <a href="../pages/about_us.html"><li>Nossa história</li></a>
+            <a href="../pages/about_us.html"><li>Nossos objetivos</li></a>
+            <a href="../pages/about_us.html"><li>Como trabalhamos</li></a>
+            <a href="../pages/contact.html"><li>Contate-nos</li></a>
+          </ul>
+        </div>
+
+        <div class="d-flex justify-content-center col-1">
+          <div class="division"></div>
+        </div>
+
+        <div class="newsletter col-4">
+          <h5 class="card-title">Newsletter</h5>
+          <p class="section-text">Se inscreva na nossa newslatter para saber quando novos códigos forem adicionados, além de ficar atualizado sobre todas as novidades.</p>
+          
+          <form class="row g-3">
+            <div class="col-auto">
+              <label for="inputEmail" class="visually-hidden">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Coloque seu email">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-outline-primary">Inscrever-se</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="d-flex justify-content-center col-1">
+          <div class="division"></div>
+        </div>
+
+        <div class="social-medias col-3">
+          <h5 class="card-title">Redes sociais</h5>
+          <p class="section-text">Nos siga nas nossas redes sociais e interaja conosco!</p>
+
+          <div class="d-flex justify-content-between align-items-center gap-3">
+            <a href=""><i class="bi bi-youtube"></i></a>
+            <div class="trace"></div>
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <div class="trace"></div>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Scripts -->
+  <script src="../scripts/matrix_effect.js"></script>
+  <script src="../scripts/cursor_light.js"></script>
+  <script src="../scripts/content_bg_lights.js"></script>
+  <script src="../scripts/tutorials/front_editor.js"></script>
+  <script src="../scripts/tutorials/change_step.js"></script>
+
+  <!-- highlight.js Script and Link -->
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Page Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

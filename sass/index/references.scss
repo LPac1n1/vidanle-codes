@@ -1,0 +1,41 @@
+#references {
+  padding: 72px 0 124px 0;
+
+  > div:first-child {
+    margin-bottom: 48px;
+  }
+
+  .section-title, .section-text {
+    margin-bottom: 0;
+  }
+
+  .card {
+    transition: .2s ease;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
+
+    img {
+      width: 124px;
+      border: 2px solid $primary-blue-color;
+      border-radius: 50%;
+      padding: 4px;
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      line-height: 36px;
+      text-align: right;
+    }
+    .card-text {
+      text-align: left;
+    }
+    
+  } .card:hover {
+    transform: translateY(-24px);
+  }
+}

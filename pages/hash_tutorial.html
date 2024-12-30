@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vidanle Codes | Jogo da Velha</title>
+
+  <!-- CSS Bootstrap Links -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  
+    <!-- CSS Links -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-bs-theme="dark">
+  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item  me-4">
+            <a class="nav-link active" aria-current="page" href="../pages/index.html">Página Inicial</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="../pages/games_and_apps.html">Jogos e Aplicações</a>
+          </li>
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tutoriais
+              <i class="bi bi-chevron-compact-down" style="font-size: 12px; margin-left: 4px;"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../pages/hash_tutorial.html">Jogo da velha</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/stopwatch_tutorial.html">Cronômetro</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/snake_tutorial.html">Jogo Snake</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/calculator_tutorial.html">Calculadora</a></li>
+            </ul>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="../pages/about_us.html">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/contact.html">Contato</a>
+          </li>
+        </ul>
+        <div class="navbar-brand">
+          <i class="bi bi-code-slash" style="font-size: 2rem; color: #0033CE;"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="page-title" style="position: relative;">
+    <div class="container-fluid" style="height: 50dvh; border-bottom: solid 4px #0033CE;" id="matrix-effect-size">
+      <div class="container d-flex flex-row" style="height: 100%;">
+        <div class="d-flex flex-column justify-content-center gap-4" style="width: 70%;">
+          <div class="d-flex flex-column gap-2">
+            <h2 class="section-subtitle" style="font-size: 2rem; margin: 0;">Tutorial</h2>
+            <h1 class="display-1 page-title">Jogo da Velha |</h1>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="../images/setting.png" height="100%" alt="">
+        </div>
+      </div>
+    </div>
+
+    <canvas 
+      id="canvas" 
+      style="position: absolute; bottom: 1px; z-index: -1; opacity: 50%;">
+    </canvas>
+  </section>
+
+  <div id="content" style="position: relative; width: 100%; height: 100%;">
+    <div class="container">
+      <div id="tutorial-content">
+        <div id="front-editor" class="card p-4 mb-5">
+          <div class="d-flex gap-5 w-100">
+            <div class="d-flex flex-column gap-3">
+              <h5 class="section-title">Deseja abrir um editor de código?</h5>
+              <p class="section-text">O Front Editor é uma ferramenta de edição de código web popular e versátil, amplamente utilizada por desenvolvedores e designers para criar e personalizar páginas web. Este editor oferece uma interface intuitiva que permite aos usuários visualizar as mudanças em tempo real à medida que fazem edições no código HTML, CSS e JavaScript.</p>
+              <a href="https://www.fronteditor.dev" target="_blank">
+                <button id="front-editor-btn" class="btn btn-outline-primary">Abrir Front Editor</button>
+              </a>
+            </div>
+    
+            <div class="d-flex justify-content-center align-items-center w-50">
+              <img src="../images/front-editor.png" class="img-fluid" alt="Logo Front Editor">
+            </div>
+    
+            <div>
+              <button type="button" class="btn-close" data-close></button>
+            </div>
+          </div>
+        </div>
+
+        <section id="tutorial">
+          <div class="row mb-5">
+            <div class="col-1">
+              <div class="sideline d-flex flex-column align-items-center">
+                <button class="step-btn" id="no-line">
+                  <a href="#tutorial-content"><p class="step-number">1</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step2"><p class="step-number unclicked">2</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step3"><p class="step-number unclicked">3</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step4"><p class="step-number unclicked">4</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step5"><p class="step-number unclicked">5</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step6"><p class="step-number unclicked">6</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step7"><p class="step-number unclicked">7</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step8"><p class="step-number unclicked">8</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step9"><p class="step-number unclicked">9</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step10"><p class="step-number unclicked">10</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step11"><p class="step-number unclicked">11</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step12"><p class="step-number unclicked">12</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step13"><p class="step-number unclicked">13</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step14"><p class="step-number unclicked">14</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step15"><p class="step-number unclicked">15</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step16"><p class="step-number unclicked">16</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step17"><p class="step-number unclicked">17</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step18"><p class="step-number unclicked">18</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step19"><p class="step-number unclicked">19</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step20"><p class="step-number unclicked">20</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step21"><p class="step-number unclicked">21</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step22"><p class="step-number unclicked">22</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step23"><p class="step-number unclicked">23</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step24"><p class="step-number unclicked">24</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step25"><p class="step-number unclicked">25</p></a>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-11">
+              <div class="steps">
+                <div class="step" id="step1">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estrutura Básica</h5>
+                    <h6 class="section-subtitle"> 1º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O código começa com as tags <code>!DOCTYPE html</code> e <code>html</code>, que definem o tipo de documento e iniciam o elemento HTML, respectivamente. Em seguida, temos a tag <code>head</code>, onde são definidas informações sobre a página, como o título exibido na aba do navegador e as referências a arquivos externos, como o arquivo CSS e o arquivo JavaScript. O conteúdo visível da página é colocado dentro da tag <code>body</code>.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot; /&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles.css&quot; /&gt;
+      &lt;title&gt;Jogo da Velha&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;!-- Conte&#250;do vis&#237;vel da p&#225;gina --&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                      </code></pre>
+                  </div>
+                </div>
+  
+                <div class="step" id="step2">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Formulário de Nomes dos Jogadores</h5>
+                    <h6 class="section-subtitle"> 2º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Dentro da <code>div class="players-name"</code>, há um formulário para inserir os nomes dos jogadores. Existem dois campos de texto, cada um com um rótulo (<code>label</code>) e um espaço reservado (<code>placeholder</code>). Além disso, há um botão "Começar" (<code>input type="submit"</code>) para iniciar o jogo</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;div class=&quot;players-name&quot;&gt;
+    &lt;p&gt;Insira o nome dos jogadores:&lt;/p&gt;
+    &lt;div class=&quot;box-names flex&quot; id=&quot;form&quot;&gt;
+      &lt;div&gt;
+        &lt;label for=&quot;first-player&quot;&gt;1&#186; Jogador:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; placeholder=&#39;Ser&#225; o &quot;X&quot;&#39; name=&quot;first-player&quot; id=&quot;first-player&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label for=&quot;second-player&quot;&gt;2&#186; Jogador:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; placeholder=&#39;Ser&#225; o &quot;O&quot;&#39; name=&quot;second-player&quot; id=&quot;second-player&quot;&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;input type=&quot;submit&quot; class=&quot;submit-names&quot; value=&quot;Come&#231;ar&quot;&gt;&lt;/input&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;         
+                      </code></pre>
+                  </div>
+                </div>
+  
+                <div class="step" id="step3">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Criar Placar</h5>
+                    <h6 class="section-subtitle"> 3º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A <code>div class="score-box"</code> contém o placar do jogo. Ela exibe os nomes dos jogadores e suas pontuações atuais. Os nomes dos jogadores são exibidos nas tags <code>p class="player-name"</code>, enquanto as pontuações são exibidas nas tags <code>span class="score-number"</code>.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+      &lt;div class=&quot;score-box&quot;&gt;
+      &lt;div class=&quot;flex&quot;&gt;
+        &lt;p class=&quot;player-name&quot; id=&quot;first-player-name&quot;&gt;&lt;/p&gt;
+        &lt;span class=&quot;score-number&quot; id=&quot;first-player-score&quot;&gt;0&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;span&gt;VS&lt;/span&gt;
+        
+      &lt;div class=&quot;flex&quot;&gt;
+        &lt;p class=&quot;player-name&quot; id=&quot;second-player-name&quot;&gt;&lt;/p&gt;
+        &lt;span class=&quot;score-number&quot; id=&quot;second-player-score&quot;&gt;0&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;     
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step4">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Tabuleiro do Jogo</h5>
+                    <h6 class="section-subtitle"> 4º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A <code>div class="board"</code> representa o tabuleiro do jogo. Cada célula do tabuleiro é representada por uma <code>div class="cell"</code>. As células são identificadas pelo atributo <code>data-cell</code>.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;div class=&quot;board&quot; data-board&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+      &lt;div class=&quot;cell&quot; data-cell&gt;&lt;/div&gt;
+    &lt;/div&gt;
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step5">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Mensagem de Vitória</h5>
+                    <h6 class="section-subtitle"> 5º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A <code>div class="winning-message"</code> é exibida quando um jogador vence o jogo. Ela contém uma mensagem de vitória (<code>p class="winning-message-text"</code>) e um botão "Reiniciar" (<code>button class="winning-message-button"</code>) para reiniciar o jogo.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;div class=&quot;winning-message&quot; data-winning-message&gt;
+      &lt;p class=&quot;winning-message-text&quot; data-winning-message-text&gt;X Venceu!&lt;/p&gt;
+      &lt;button class=&quot;winning-message-button&quot; data-restart-button&gt;
+        Reiniciar!
+      &lt;/button&gt;
+    &lt;/div&gt;      
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step6">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Adicionar o Script</h5>
+                    <h6 class="section-subtitle"> 6º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">No final do código, há uma tag <code>script</code> que faz referência a um arquivo JavaScript externo (<code>scripts.js</code>). Esse arquivo contém a lógica do jogo, como a detecção de vitória e a manipulação dos elementos da página.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;script src=&quot;./scripts.js&quot;&gt;&lt;/script&gt;     
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step7">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Reset de Estilos</h5>
+                    <h6 class="section-subtitle"> 7º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define as propriedades de box-sizing, margin e padding para todos os elementos. Além disso, define a fonte padrão para o corpo do documento.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }                        
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step8">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do Corpo</h5>
+                    <h6 class="section-subtitle"> 8º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a altura e largura do corpo para ocupar toda a altura e largura da janela. Define também um plano de fundo gradiente usando as cores especificadas.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    body {
+      height: 100vh;
+      width: 100vw;
+      background: linear-gradient(
+      90deg,
+      rgba(19, 21, 21) 0%,
+      rgba(11, 33, 99) 100%
+      );
+    }                                           
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step9">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do Contâiner</h5>
+                    <h6 class="section-subtitle"> 9º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a largura e altura do contêiner para ocupar toda a altura e largura da janela.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .container {
+      width: 100vw;
+      height: 100vh;
+    }                                                              
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step10">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do Flexbox</h5>
+                    <h6 class="section-subtitle"> 10º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define as propriedades de exibição, justificação e alinhamento para criar um layout flexível e centralizado.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }                                                                            
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step11">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos dos Nomes dos Jogadores</h5>
+                    <h6 class="section-subtitle"> 11º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define o fundo, borda arredondada, preenchimento e margem para o elemento dos nomes dos jogadores. Além disso, define estilos para os elementos de parágrafo dentro do elemento dos nomes dos jogadores.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .players-name {
+      background-color: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin: 24px;
+    }
+    .players-name p {
+      text-align: center;
+      font-weight: 500;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }                                                                        
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step12">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos da Caixa de Nomes</h5>
+                    <h6 class="section-subtitle"> 12º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a direção da coluna e o espaçamento entre os elementos dentro da caixa de nomes. Define também os estilos para os elementos div dentro da caixa de nomes. Além disso, define estilos para os elementos de entrada de texto e rótulos.
+                    </p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .box-names {
+      flex-direction: column;
+      gap: 24px;
+    }
+    .box-names div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }                                                                                 
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step13">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do Botão de Envio de Nomes</h5>
+                    <h6 class="section-subtitle"> 13º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text"> Define estilos para o botão de envio de nomes, incluindo borda, cor de fundo, preenchimento e transição.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    input {
+      width: 100%;
+      border: solid 1px;
+      border-radius: 16px;
+      padding: 8px 24px 8px 12px;
+    }
+    label {
+      text-align: center;
+      width: 148px;
+      padding: 12px;
+    }
+
+    .submit-names {
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      background-color: #0b2163;
+      padding: 8px 24px;
+      transition: all 0.3s ease-in-out;
+
+    } .submit-names:hover {
+        background-color: #001140;
+      }                                                                       
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step14">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos da Caixa de Pontuação</h5>
+                    <h6 class="section-subtitle"> 14º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a posição absoluta, largura, cor de fundo, borda, borda arredondada, exibição flexível, justificação e alinhamento para a caixa de pontuação. Além disso, define estilos para os elementos span, nome do jogador e número de pontuação dentro da caixa de pontuação.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .score-box {
+      position: absolute;
+      width: 356px;
+      background-color: white;
+      border: solid 2px #0b2163;
+      border-radius: 8px;
+  
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  
+      left: -1px;
+      top: -1px;
+  
+      padding: 12px;
+      margin: 48px;
+    }
+    .score-box div {
+      flex-direction: column;
+    }
+    .score-box > span {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .player-name {
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .score-number {
+      font-size: 56px;
+      font-weight: 700;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step15">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do Tabuleiro</h5>
+                    <h6 class="section-subtitle"> 15º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a exibição como grid, largura e altura de 100%, justificação e alinhamento centralizados e colunas de grade automáticas.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .board {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: repeat(3, auto);
+    }
+  
+    .board.x .cell:not(.x):not(.circle):hover::after,
+    .board.x .cell:not(.x):not(.circle):hover::before {
+      background: rgba(255, 255, 255, 0.3) !important;
+    }
+  
+    .board.circle .cell:not(.x):not(.circle):hover::after,
+    .board.x .cell:not(.x):not(.circle):hover::before {
+      border-color: rgba(255, 255, 255, 0.3) !important;
+    }                    
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step16">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos das Células</h5>
+                    <h6 class="section-subtitle"> 16º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a largura, altura, borda, exibição flexível, justificação e alinhamento centralizados e posição relativa para as células. Define estilos para diferentes posições das células para criar o visual do jogo da velha.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .cell {
+      width: 124px;
+      height: 124px;
+      border: 5px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+  
+    .cell.x,
+    .cell.circle {
+      cursor: not-allowed;
+    }
+  
+   .cell:nth-child(1),
+   .cell:nth-child(2),
+    .cell:nth-child(3) {
+      border-top: none;
+    }
+  
+    .cell:nth-child(1),
+    .cell:nth-child(4),
+    .cell:nth-child(7) {
+      border-left: none;
+    }
+  
+    .cell:nth-child(7),
+    .cell:nth-child(8),
+    .cell:nth-child(9) {
+      border-bottom: none;
+    }
+  
+    .cell:nth-child(3),
+    .cell:nth-child(6),
+    .cell:nth-child(9) {
+      border-right: none;
+    }                                        
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step17">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do "X"</h5>
+                    <h6 class="section-subtitle"> 17º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define as propriedades antes e depois das células "X" para criar o visual das linhas diagonais.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .board.x .cell:not(.x):not(.circle):hover::after,
+    .board.x .cell:not(.x):not(.circle):hover::before {
+      content: "";
+      height: calc(80px * 0.15);
+      width: calc(80px * 0.9);
+      background: white;
+      position: absolute;
+    }
+    
+    .cell.x::before,
+    .board.x .cell:not(.x):not(.circle):hover::before {
+      transform: rotate(45deg);
+    }
+    
+    .cell.x::after,
+    .board.x .cell:not(.x):not(.circle):hover::after {
+      transform: rotate(-45deg);
+    }                                                              
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step18">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos do "O"</h5>
+                    <h6 class="section-subtitle"> 18º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define as propriedades antes e depois das células "círculo" para criar o visual do círculo.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .cell.circle::before,
+    .cell.circle::after,
+    .board.circle .cell:not(.x):not(.circle):hover::after {
+      content: "";
+      height: calc(80px * 0.9);
+      width: calc(80px * 0.9);
+      border: solid 12px white;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 50%;
+    }                                                                                   
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step19">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos da Mensagem de Vitória</h5>
+                    <h6 class="section-subtitle"> 19º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define a exibição como oculta, posição fixa, justificação e alinhamento centralizados, cor de fundo com transparência e direção da coluna para a mensagem de vitória. Define estilos para o botão da mensagem de vitória e o texto da mensagem.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .winning-message {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      flex-direction: column;
+    }
+  
+    .winning-message-button {
+      font-size: 28px;
+      background-color: rgb(11, 33, 99);
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      margin-top: 24px;
+      color: white;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    .winning-message-button:hover {
+      color: rgb(11, 33, 99);
+      background-color: white;
+   }
+  
+    .winning-message-text {
+      color: white;
+      font-size: 5rem;
+      font-weight: 500;
+    }
+  
+    .show-winning-message {
+      display: flex;
+    }
+                      </code></pre>
+                  </div>
+                </div> 
+
+                <div class="step" id="step20">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilos Adicionais</h5>
+                    <h6 class="section-subtitle"> 20º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Define as classes "hide" e "show-board" com display: none e display: grid, respectivamente, para controlar a visibilidade dos elementos</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .hide {
+      display: none;
+    }
+  
+    .show-board {
+      display: grid;
+    }                    
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step21">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Adicionar Seletores</h5>
+                    <h6 class="section-subtitle"> 21º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O código começa com a seleção de elementos HTML usando os seletores <code>querySelector</code> e <code>querySelectorAll</code>. Por exemplo, <code>document.querySelector(".submit-names")</code> seleciona o botão de início do jogo com a classe <code>"submit-names"</code>.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    const startButton = document.querySelector(".submit-names")
+    const playersName = document.querySelector(".players-name")
+    const game = document.querySelector(".game")
+    const cellElements = document.querySelectorAll("[data-cell]");
+    const winningMessageTextElement = document.querySelector("[data-winning-message-text]");
+    const board = document.querySelector("[data-board]")
+    const winningMessage = document.querySelector("[data-winning-message]");
+    const restartButton = document.querySelector("[data-restart-button]");
+    const firstPlayerName = document.getElementById("first-player")
+    const secondPlayerName = document.getElementById("second-player")
+    const firstScoreName = document.getElementById("first-player-name")
+    const secondScoreName = document.getElementById("second-player-name")
+    const firstPlayerScoreText = document.getElementById("first-player-score")
+    const secondPlayerScoreText = document.getElementById("second-player-score")                                          
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step22">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Adicionar Evento de Clique</h5>
+                    <h6 class="section-subtitle"> 22º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O código define um evento de clique para o botão de início do jogo usando <code>startButton.onclick</code>. Quando o botão é clicado, algumas classes são adicionadas e removidas para mostrar e ocultar os elementos corretos na página. Além disso, a função <code>showNamesOnScore()</code> é chamada para exibir os nomes dos jogadores no placar.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    startButton.onclick = () => {
+      playersName.classList.add("hide")
+      game.classList.remove("hide")
+  
+      showNamesOnScore()
+    }                                                             
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step23">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Tabuleiro e Combinações Vencedoras</h5>
+                    <h6 class="section-subtitle"> 23º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O código define uma matriz <code>winningCombinations</code> que representa todas as combinações possíveis para ganhar o jogo. Cada combinação consiste em três índices que correspondem às células do tabuleiro. O tabuleiro é representado pelos elementos HTML com o atributo <code>data-cell</code>.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    const cellElements = document.querySelectorAll("[data-cell]");
+    const winningCombinations = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];                                                                                  
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step24">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Funções do Jogo</h5>
+                    <h6 class="section-subtitle"> 24º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O código define várias funções para controlar o jogo. A função <code>startGame()</code> é chamada para iniciar o jogo, onde as células do tabuleiro são configuradas e os eventos de clique são adicionados. A função <code>endGame()</code> é chamada quando o jogo termina, exibindo uma mensagem de vitória ou empate. Outras funções, como <code>checkForWin()</code>, <code>checkForDraw()</code>, <code>placeMark()</code>, <code>setBoardHoverClass()</code>, <code>swapTurns()</code> e <code>handleClick()</code>, são responsáveis por verificar a vitória, empate, marcar as células, alternar entre os jogadores e lidar com os cliques nas células.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    const startGame = () => {
+    isCircleTurn = false;
+
+    for (const cell of cellElements) {
+      cell.classList.remove("circle");
+      cell.classList.remove("x");
+      cell.removeEventListener("click", handleClick);
+      cell.addEventListener("click", handleClick, { once: true });
+    }
+
+    setBoardHoverClass();
+    winningMessage.classList.remove("show-winning-message");
+  };
+  
+  const endGame = (isDraw) => {
+    if (isDraw) {
+      winningMessageTextElement.innerText = "Empate!";
+    } else {
+      winningMessageTextElement.innerText = `${isCircleTurn ? "O" : "X"} venceu!`;
+      isCircleTurn ? oScore++ : xScore++
+      showScore()
+    }
+
+    winningMessage.classList.add("show-winning-message");
+  };
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step25">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Adicionar Pontuação</h5>
+                    <h6 class="section-subtitle"> 25º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O código mantém a pontuação dos jogadores usando as variáveis <code>xScore</code> e <code>oScore</code>. As pontuações são atualizadas na função <code>endGame()</code> e exibidas no placar usando as variáveis <code>firstPlayerScoreText</code> e <code>secondPlayerScoreText</code>.</p>
+
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    let xScore = 0
+    let oScore = 0
+    
+    const showNamesOnScore = () => {
+      if (firstPlayerName.value == "") {
+        firstPlayerName.value = "Jogador 1"
+      }
+      if (secondPlayerName.value == "") {
+        secondPlayerName.value = "Jogador 2"
+      }
+  
+      firstScoreName.innerHTML = firstPlayerName.value
+      secondScoreName.innerHTML = secondPlayerName.value
+    }
+    
+    const showScore = () => {
+      firstPlayerScoreText.innerText = xScore
+      secondPlayerScoreText.innerText = oScore
+    }                      
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Parabéns, você terminou o código! 🥳</h5>
+                    <h6 class="section-subtitle"> Fim</h6>
+                  </div>
+
+                  <p class="section-text">
+                    Parabéns pela sua conquista em seguir o passo a passo e concluir a criação do código HTML, CSS e JavaScript! É incrível ver o seu comprometimento e dedicação para alcançar esse objetivo. Dominar essas linguagens de programação é um grande feito e demonstra sua habilidade e determinação.
+                  </p>
+                  <p class="section-text">
+                    Ao finalizar esse projeto, você não apenas adquiriu novos conhecimentos em desenvolvimento web, mas também demonstrou sua capacidade de seguir instruções e resolver desafios de forma eficaz. Este é apenas o começo de uma jornada emocionante no mundo da programação, e estou ansiosa para ver suas futuras realizações.
+                  </p>
+                  <p class="section-text">
+                    Continue assim, persistente e dedicado, e lembre-se de que cada desafio superado é um passo em direção ao seu crescimento pessoal e profissional. Parabéns mais uma vez e que você continue alcançando ainda mais sucessos em sua jornada de aprendizado em programação!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="code-download">
+          <div class="d-flex justify-content-between gap-4">
+            <div class="card p-4">
+              <div class="d-flex align-items-center gap-4 mb-3">
+                <i class="bi bi-download" style="font-size: 48px;"></i>
+                <h5 class="section-title" style="margin: 0;">Baixar códigos</h5>
+              </div>
+
+              <div>
+                <p class="section-text">
+                  Em nosso site, você pode acessar e baixar gratuitamente os códigos do jogo da velha. Esses códigos são uma valiosa ferramenta de aprendizado para aspirantes a desenvolvedores e entusiastas de programação. Eles incluem um jogo de velha funcional programado em linguagens como HTML, CSS e JavaScript, e servem como ponto de partida para projetos personalizados.
+                </p>
+              </div>
+
+              <div>
+                <a href="../games_and_apps/Jogo da Velha.zip" download>
+                  <button class="btn btn-outline-primary">Baixar códigos</button>
+                </a>
+              </div>
+            </div>
+
+            <div class="card w-100 d-flex flex-column align-items-center p-4">
+              <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
+                <i class="bi bi-bag-check-fill" style="font-size: 3rem;"></i>
+                <h5 class="section-title" style="margin: 0;">Referência</h5>
+              </div>
+
+              <div class="reference-img d-flex justify-content-center align-items-center mb-4">
+                <img src="../images/felipe_rocha.jpg" alt="Foto Felipe Rocha"
+                style="width: 12rem;">
+
+                <a href="https://www.youtube.com/c/dicasparadevs" target="_blank">
+                  <div>
+                    <p class="section-text">Ver <br> Canal</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="d-flex justify-content-center align-items-center gap-3" style="width: 12rem;">
+                <h5 class="card-title" style="text-align: right; line-height: 36px;">Felipe Rocha</h5>
+                <p class="card-text">Curso para Devs</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  <footer id="footer">
+    <div class="container">
+      <div class="d-flex row">
+        <div class="useful-links col-3">
+          <h5 class="card-title">Links úteis</h5>
+          <ul class="d-flex flex-column gap-3">
+            <a href="../pages/about_us.html"><li>Nossa história</li></a>
+            <a href="../pages/about_us.html"><li>Nossos objetivos</li></a>
+            <a href="../pages/about_us.html"><li>Como trabalhamos</li></a>
+            <a href="../pages/contact.html"><li>Contate-nos</li></a>
+          </ul>
+        </div>
+
+        <div class="d-flex justify-content-center col-1">
+          <div class="division"></div>
+        </div>
+
+        <div class="newsletter col-4">
+          <h5 class="card-title">Newsletter</h5>
+          <p class="section-text">Se inscreva na nossa newslatter para saber quando novos códigos forem adicionados, além de ficar atualizado sobre todas as novidades.</p>
+          
+          <form class="row g-3">
+            <div class="col-auto">
+              <label for="inputEmail" class="visually-hidden">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Coloque seu email">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-outline-primary">Inscrever-se</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="d-flex justify-content-center col-1">
+          <div class="division"></div>
+        </div>
+
+        <div class="social-medias col-3">
+          <h5 class="card-title">Redes sociais</h5>
+          <p class="section-text">Nos siga nas nossas redes sociais e interaja conosco!</p>
+
+          <div class="d-flex justify-content-between align-items-center gap-3">
+            <a href=""><i class="bi bi-youtube"></i></a>
+            <div class="trace"></div>
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <div class="trace"></div>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Scripts -->
+  <script src="../scripts/matrix_effect.js"></script>
+  <script src="../scripts/cursor_light.js"></script>
+  <script src="../scripts/content_bg_lights.js"></script>
+  <script src="../scripts/tutorials/front_editor.js"></script>
+  <script src="../scripts/tutorials/change_step.js"></script>
+
+  <!-- highlight.js Script and Link -->
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Page Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+#tutorial-content {
+  padding: 72px 0 124px;
+
+  .sideline {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+
+    height: 496px;
+    overflow-y: scroll;
+
+    .step-btn {
+      background: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6px;
+      gap: 12px;
+      cursor: auto;
+
+      a {
+        text-decoration: none;
+      }
+  
+      .step-number {
+        color: white;
+        background-color: $primary-blue-color;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+    }
+
+    .step-btn::before {
+      content: "";
+      width: 4px;
+      height: 32px; 
+      background-color: $primary-blue-color;
+      border-radius: 4px;
+    }
+
+    #no-line::before {
+      display: none;
+    }
+  }
+
+  .step {
+    padding-top: 100px;
+
+    .section-title {
+      margin: 0;
+    }
+    .section-subtitle {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  
+    .language-bar {
+      background-color: $language-bar-bg-color;
+      border-radius: 8px 8px 0 0;
+      padding: 12px 28px;
+  
+      p {
+        font-size: 0.85rem;
+        background: none;
+        border: none;
+        opacity: 75%;
+        padding: 5px 12px;
+      }
+    }
+  
+    .code-wrapper {
+      pre {
+        width: 100%;
+        height: 100%;
+        margin: 0 0 24px;
+        border-radius: 0 0 8px 8px;
+      }
+    }
+  }
+
+  .steps .step:first-child {
+    padding: 0;
+  }
+  .steps .step:last-child {
+    padding-top: 48px;
+  }
+}

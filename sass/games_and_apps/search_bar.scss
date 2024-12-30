@@ -1,0 +1,22 @@
+#games-and-apps-content {
+  padding: 72px 0 124px;
+
+  .search-bar {
+    border: solid 1px white;
+    border-radius: 8px;
+    opacity: 50%;
+    padding: 12px 24px;
+    margin-bottom: 48px;
+  
+    #search-bar-input {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+    }
+  }
+
+  #games-and-apps {
+    padding: 0;
+  }
+}

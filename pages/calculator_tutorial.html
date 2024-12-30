@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vidanle Codes | Calculadora</title>
+
+  <!-- CSS Bootstrap Links -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  
+    <!-- CSS Links -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body data-bs-theme="dark">
+  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item  me-4">
+            <a class="nav-link active" aria-current="page" href="../pages/index.html">Página Inicial</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="../pages/games_and_apps.html">Jogos e Aplicações</a>
+          </li>
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tutoriais
+              <i class="bi bi-chevron-compact-down" style="font-size: 12px; margin-left: 4px;"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../pages/hash_tutorial.html">Jogo da velha</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/stopwatch_tutorial.html">Cronômetro</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/snake_tutorial.html">Jogo Snake</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../pages/calculator_tutorial.html">Calculadora</a></li>
+            </ul>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="../pages/about_us.html">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pages/contact.html">Contato</a>
+          </li>
+        </ul>
+        <div class="navbar-brand">
+          <i class="bi bi-code-slash" style="font-size: 2rem; color: #0033CE;"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="page-title" style="position: relative;">
+    <div class="container-fluid" style="height: 50dvh; border-bottom: solid 4px #0033CE;" id="matrix-effect-size">
+      <div class="container d-flex flex-row" style="height: 100%;">
+        <div class="d-flex flex-column justify-content-center gap-4" style="width: 70%;">
+          <div class="d-flex flex-column gap-2">
+            <h2 class="section-subtitle" style="font-size: 2rem; margin: 0;">Tutorial</h2>
+            <h1 class="display-1 page-title">Calculadora |</h1>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="../images/setting.png" height="100%" alt="">
+        </div>
+      </div>
+    </div>
+
+    <canvas 
+      id="canvas" 
+      style="position: absolute; bottom: 1px; z-index: -1; opacity: 50%;">
+    </canvas>
+  </section>
+
+  <div id="content" style="position: relative; width: 100%; height: 100%;">
+    <div class="container">
+      <div id="tutorial-content">
+        <div id="front-editor" class="card p-4 mb-5">
+          <div class="d-flex gap-5 w-100">
+            <div class="d-flex flex-column gap-3">
+              <h5 class="section-title">Deseja abrir um editor de código?</h5>
+              <p class="section-text">O Front Editor é uma ferramenta de edição de código web popular e versátil, amplamente utilizada por desenvolvedores e designers para criar e personalizar páginas web. Este editor oferece uma interface intuitiva que permite aos usuários visualizar as mudanças em tempo real à medida que fazem edições no código HTML, CSS e JavaScript.</p>
+              <a href="https://www.fronteditor.dev" target="_blank">
+                <button id="front-editor-btn" class="btn btn-outline-primary">Abrir Front Editor</button>
+              </a>
+            </div>
+    
+            <div class="d-flex justify-content-center align-items-center w-50">
+              <img src="../images/front-editor.png" class="img-fluid" alt="Logo Front Editor">
+            </div>
+    
+            <div>
+              <button type="button" class="btn-close" data-close></button>
+            </div>
+          </div>
+        </div>
+
+        <section id="tutorial">
+          <div class="row mb-5">
+            <div class="col-1">
+              <div class="sideline d-flex flex-column align-items-center">
+                <button class="step-btn" id="no-line">
+                  <a href="#tutorial-content"><p class="step-number">1</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step2"><p class="step-number unclicked">2</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step3"><p class="step-number unclicked">3</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step4"><p class="step-number unclicked">4</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step5"><p class="step-number unclicked">5</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step6"><p class="step-number unclicked">6</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step7"><p class="step-number unclicked">7</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step8"><p class="step-number unclicked">8</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step9"><p class="step-number unclicked">9</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step10"><p class="step-number unclicked">10</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step11"><p class="step-number unclicked">11</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step12"><p class="step-number unclicked">12</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step13"><p class="step-number unclicked">13</p></a>
+                </button>
+
+                <button class="step-btn">
+                  <a href="#step14"><p class="step-number unclicked">14</p></a>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-11">
+              <div class="steps">
+                <div class="step" id="step1">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">HTML Básico</h5>
+                    <h6 class="section-subtitle"> 1º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Começamos com o esqueleto básico do HTML, definindo o tipo de documento, a linguagem da página e configurando metadados no <code>head</code>. O título é definido como "Calculadora", e um link para o arquivo CSS externo é incluído para estilização.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;pt-br&quot;&gt;
+      &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;title&gt;Calculadora&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;./style.css&quot;&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step2">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estrutura da Página HTML</h5>
+                    <h6 class="section-subtitle"> 2º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Dentro do <code>body</code>, criamos contêineres para a aparência visual. Um contêiner "fundo" com um gradiente de cores e um contêiner "calculadora" que abriga o título, um parágrafo para exibir resultados e uma tabela para os botões da calculadora.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;div class=&quot;fundo&quot;&gt;
+    &lt;div class=&quot;calculadora&quot;&gt;
+      &lt;h1&gt;Calculadora&lt;/h1&gt;
+      &lt;p id=&quot;resultado&quot;&gt;&lt;/p&gt;
+      &lt;table&gt;
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step3">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Botões da Calculadora em HTML</h5>
+                    <h6 class="section-subtitle"> 3º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Os botões da calculadora são organizados em linhas e colunas dentro de uma tabela HTML. Cada botão é um elemento <code>button</code> com a classe "botao" e uma função JavaScript associada para ser executada ao ser clicado.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+    &lt;tr&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;clean()&quot;&gt;C&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;back()&quot;&gt;&lt;&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;/&#39;)&quot;&gt;/&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;*&#39;)&quot;&gt;X&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;7&#39;)&quot;&gt;7&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;8&#39;)&quot;&gt;8&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;9&#39;)&quot;&gt;9&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;-&#39;)&quot;&gt;-&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;4&#39;)&quot;&gt;4&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;5&#39;)&quot;&gt;5&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;6&#39;)&quot;&gt;6&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;+&#39;)&quot;&gt;+&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;1&#39;)&quot;&gt;1&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;2&#39;)&quot;&gt;2&lt;/button&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert(&#39;3&#39;)&quot;&gt;3&lt;/button&gt;&lt;/td&gt;
+      &lt;td rowspan=&quot;2&quot;&gt;
+        &lt;button class=&quot;botao&quot; style=&quot;height: 106px&quot; onclick=&quot;calcular()&quot;&gt;
+          =
+        &lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan=&quot;2&quot;&gt;
+        &lt;button class=&quot;botao&quot; style=&quot;width: 106px&quot; onclick=&quot;insert(&#39;0&#39;)&quot;&gt;
+          0
+        &lt;/button&gt;
+      &lt;/td&gt;
+      &lt;td&gt;&lt;button class=&quot;botao&quot; onclick=&quot;insert (&#39;.&#39;)&quot;&gt;.&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step4">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Terminar a estrutura HTML</h5>
+                    <h6 class="section-subtitle"> 4º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Fechamento da tabela de botões e a inclusão do script JavaScript no final do <code>body</code> para manipular a lógica da calculadora.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">HTML</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-html">
+          &lt;/table&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    
+        &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step5">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilização com CSS</h5>
+                    <h6 class="section-subtitle"> 5º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">O CSS começa com um reset de margens e preenchimentos para garantir consistência entre os navegadores.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step6">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilo do Fundo e da Calculadora</h5>
+                    <h6 class="section-subtitle"> 6º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A classe "fundo" estiliza o gradiente de fundo, definindo altura, cor do texto e fonte.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .fundo {
+      background-image: linear-gradient(
+        45deg,
+        rgba(19, 21, 21, 1),
+        rgba(0, 51, 206, 1),
+        rgba(19, 21, 21, 1)
+      );
+      height: 100vh;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step7">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilo da Calculadora</h5>
+                    <h6 class="section-subtitle"> 7º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A classe "calculadora" posiciona a calculadora no centro da tela, define sua aparência e adiciona bordas arredondadas.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .calculadora {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 1);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 12px;
+      padding: 12px;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step8">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilo dos Botões</h5>
+                    <h6 class="section-subtitle"> 8º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A classe "botao" estiliza os botões da calculadora com tamanho, fonte e cores específicas.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .botao {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      margin: 3px;
+      cursor: pointer;
+      background-color: rgb(31, 31, 31);
+      border: none;
+      color: white;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step9">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Efeito de Hover nos Botões</h5>
+                    <h6 class="section-subtitle"> 9º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">Ao passar o mouse sobre os botões, o fundo escurece para fornecer feedback visual.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    .botao:hover {
+      background-color: black;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step10">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Estilo do Visor de Resultados</h5>
+                    <h6 class="section-subtitle"> 10º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A estilização do visor de resultados inclui cor de fundo, tamanho, margens e alinhamento do texto.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">CSS</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-css">
+    #resultado {
+      background-color: white;
+      width: 207px;
+      height: 30px;
+      margin: 5px;
+      font-size: 25px;
+      padding: 5px;
+      color: black;
+      text-align: right;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step11">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Lógica da Calculadora com JavaScript</h5>
+                    <h6 class="section-subtitle"> 11º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">No JavaScript, a função insert adiciona números e operadores ao visor.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    function insert(num) {
+      var numero = document.getElementById("resultado").innerHTML;
+      document.getElementById("resultado").innerHTML = numero + num;
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step12">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Limpar Visor com JavaScript</h5>
+                    <h6 class="section-subtitle"> 12º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">No JavaScript, a função insert adiciona números e operadores ao visor.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    function clean() {
+      document.getElementById("resultado").innerHTML = "";
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step13">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Retornar um Caractere com JavaScript</h5>
+                    <h6 class="section-subtitle"> 13º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A função back remove o último caractere do visor.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    function back() {
+      var resultado = document.getElementById("resultado").innerHTML;
+      document.getElementById("resultado").innerHTML = resultado.substring(
+        0,
+        resultado.length - 1
+      );
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step" id="step14">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Calcular com JavaScript</h5>
+                    <h6 class="section-subtitle"> 14º Passo</h6>
+                  </div>
+                  
+                  <p class="section-text">A função calcular avalia a expressão no visor e exibe o resultado ou uma mensagem de erro. Essas funções são vinculadas aos botões HTML para interatividade.</p>
+  
+                  <div class="language-bar d-flex align-items-center gap-4 w-100">
+                    <p id="html-btn">JavaScript</p>
+                  </div>
+                  <div class="code-wrapper">
+                    <pre id="html"><code class="language-js">
+    function calcular() {
+      var resultado = document.getElementById("resultado").innerHTML;
+      if (resultado) {
+        document.getElementById("resultado").innerHTML = eval(resultado);
+      } else {
+        document.getElementById("resultado").innerHTML = "Nada a calcular...";
+      }
+    }
+                      </code></pre>
+                  </div>
+                </div>
+
+                <div class="step">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Parabéns, você terminou o código! 🥳</h5>
+                    <h6 class="section-subtitle"> Fim</h6>
+                  </div>
+
+                  <p class="section-text">
+                    Parabéns pela sua conquista em seguir o passo a passo e concluir a criação do código HTML, CSS e JavaScript! É incrível ver o seu comprometimento e dedicação para alcançar esse objetivo. Dominar essas linguagens de programação é um grande feito e demonstra sua habilidade e determinação.
+                  </p>
+                  <p class="section-text">
+                    Ao finalizar esse projeto, você não apenas adquiriu novos conhecimentos em desenvolvimento web, mas também demonstrou sua capacidade de seguir instruções e resolver desafios de forma eficaz. Este é apenas o começo de uma jornada emocionante no mundo da programação, e estou ansiosa para ver suas futuras realizações.
+                  </p>
+                  <p class="section-text">
+                    Continue assim, persistente e dedicado, e lembre-se de que cada desafio superado é um passo em direção ao seu crescimento pessoal e profissional. Parabéns mais uma vez e que você continue alcançando ainda mais sucessos em sua jornada de aprendizado em programação!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="code-download">
+          <div class="d-flex justify-content-between gap-4">
+            <div class="card p-4">
+              <div class="d-flex align-items-center gap-4 mb-3">
+                <i class="bi bi-download" style="font-size: 48px;"></i>
+                <h5 class="section-title" style="margin: 0;">Baixar códigos</h5>
+              </div>
+
+              <div>
+                <p class="section-text">
+                  Em nosso site, você pode acessar e baixar gratuitamente os códigos do jogo da velha. Esses códigos são uma valiosa ferramenta de aprendizado para aspirantes a desenvolvedores e entusiastas de programação. Eles incluem um jogo de velha funcional programado em linguagens como HTML, CSS e JavaScript, e servem como ponto de partida para projetos personalizados.
+                </p>
+              </div>
+
+              <div>
+                <a href="../games_and_apps/Calculadora.zip" download>
+                  <button class="btn btn-outline-primary">Baixar códigos</button>
+                </a>
+              </div>
+            </div>
+
+            <div class="card w-100 d-flex flex-column align-items-center p-4">
+              <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
+                <i class="bi bi-bag-check-fill" style="font-size: 3rem;"></i>
+                <h5 class="section-title" style="margin: 0;">Referência</h5>
+              </div>
+
+              <div class="reference-img d-flex justify-content-center align-items-center mb-4">
+                <img src="../images/gustavo_neitzke.jpg" alt="Foto Felipe Rocha"
+                style="width: 12rem;">
+
+                <a href="https://www.youtube.com/@GustavoNeitzke" target="_blank">
+                  <div>
+                    <p class="section-text">Ver <br> Canal</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="d-flex justify-content-center align-items-center gap-3" style="width: 12rem;">
+                <h5 class="card-title" style="text-align: right; line-height: 36px; width: 124px;">Gustavo Neitzke</h5>
+                <p class="card-text">Canal Neitzke</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  <footer id="footer">
+    <div class="container">
+      <div class="d-flex row">
+        <div class="useful-links col-3">
+          <h5 class="card-title">Links úteis</h5>
+          <ul class="d-flex flex-column gap-3">
+            <a href="../pages/about_us.html"><li>Nossa história</li></a>
+            <a href="../pages/about_us.html"><li>Nossos objetivos</li></a>
+            <a href="../pages/about_us.html"><li>Como trabalhamos</li></a>
+            <a href="../pages/contact.html"><li>Contate-nos</li></a>
+          </ul>
+        </div>
+
+        <div class="d-flex justify-content-center col-1">
+          <div class="division"></div>
+        </div>
+
+        <div class="newsletter col-4">
+          <h5 class="card-title">Newsletter</h5>
+          <p class="section-text">Se inscreva na nossa newslatter para saber quando novos códigos forem adicionados, além de ficar atualizado sobre todas as novidades.</p>
+          
+          <form class="row g-3">
+            <div class="col-auto">
+              <label for="inputEmail" class="visually-hidden">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Coloque seu email">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-outline-primary">Inscrever-se</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="d-flex justify-content-center col-1">
+          <div class="division"></div>
+        </div>
+
+        <div class="social-medias col-3">
+          <h5 class="card-title">Redes sociais</h5>
+          <p class="section-text">Nos siga nas nossas redes sociais e interaja conosco!</p>
+
+          <div class="d-flex justify-content-between align-items-center gap-3">
+            <a href=""><i class="bi bi-youtube"></i></a>
+            <div class="trace"></div>
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <div class="trace"></div>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Scripts -->
+  <script src="../scripts/matrix_effect.js"></script>
+  <script src="../scripts/cursor_light.js"></script>
+  <script src="../scripts/content_bg_lights.js"></script>
+  <script src="../scripts/tutorials/front_editor.js"></script>
+  <script src="../scripts/tutorials/change_step.js"></script>
+
+  <!-- highlight.js Script and Link -->
+  <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Page Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
